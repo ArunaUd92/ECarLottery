@@ -1,0 +1,20 @@
+PODS:
+  - ARNTransitionAnimator (3.2.0)
+  - IQKeyboardManagerSwift (6.5.5)
+
+DEPENDENCIES:
+  - ARNTransitionAnimator
+  - IQKeyboardManagerSwift
+
+SPEC REPOS:
+  trunk:
+    - ARNTransitionAnimator
+    - IQKeyboardManagerSwift
+
+SPEC CHECKSUMS:
+  ARNTransitionAnimator: 6fea1fe318b251abfd3cbd06d91215deb374ae40
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+
+PODFILE CHECKSUM: 98f7e7ca4a9f9844223f84196598cdf7e4cdbc1e
+
+COCOAPODS: 1.9.0.beta.3

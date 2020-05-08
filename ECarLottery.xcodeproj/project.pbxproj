@@ -3,10 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041BC502245A0DE2009BD8A4 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC501245A0DE2009BD8A4 /* CartViewController.swift */; };
+		041BC505245A147A009BD8A4 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC504245A147A009BD8A4 /* CartCollectionViewCell.swift */; };
+		041BC507245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC506245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift */; };
+		041BC509245A8DA3009BD8A4 /* OCTGalleryLayout_v1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC508245A8DA3009BD8A4 /* OCTGalleryLayout_v1.swift */; };
+		041BC50B245A8DAB009BD8A4 /* OCTGalleryLayout_v2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC50A245A8DAB009BD8A4 /* OCTGalleryLayout_v2.swift */; };
+		041BC50D245A8DB1009BD8A4 /* OCTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC50C245A8DB1009BD8A4 /* OCTCollectionViewCell.swift */; };
+		041BC50F245A8DBB009BD8A4 /* OCTCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC50E245A8DBB009BD8A4 /* OCTCollectionViewCell.xib */; };
+		041BC51E245C1244009BD8A4 /* ImageZoomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC51D245C1244009BD8A4 /* ImageZoomAnimation.swift */; };
+		0470003C2462D6BB00A5215D /* SpecificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470003B2462D6BB00A5215D /* SpecificationsTableViewCell.swift */; };
+		04700043246543DA00A5215D /* CartItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04700042246543D900A5215D /* CartItemDetailsViewController.swift */; };
+		04A9A5DF24557CB20086062D /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5DE24557CB20086062D /* RoundUIView.swift */; };
+		04A9A5E124557CBE0086062D /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5E024557CBE0086062D /* RoundImageView.swift */; };
+		04A9A5E324557CC60086062D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5E224557CC60086062D /* RoundButton.swift */; };
+		04A9A5E524557CD10086062D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5E424557CD10086062D /* GradientView.swift */; };
+		04A9A5E724557FCA0086062D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5E624557FCA0086062D /* HomeViewController.swift */; };
+		04A9A5EB245580F20086062D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5EA245580F20086062D /* HomeTableViewCell.swift */; };
+		04A9A5ED2455822F0086062D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5EC2455822F0086062D /* UIButton.swift */; };
+		04A9A5EF2455BC0D0086062D /* VehicleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5EE2455BC0D0086062D /* VehicleDetailsViewController.swift */; };
 		04BB9D712451D70500DB7BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9D702451D70500DB7BBA /* AppDelegate.swift */; };
 		04BB9D732451D70500DB7BBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9D722451D70500DB7BBA /* SceneDelegate.swift */; };
 		04BB9D752451D70500DB7BBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9D742451D70500DB7BBA /* ViewController.swift */; };
@@ -15,6 +33,9 @@
 		04BB9D7D2451D70900DB7BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9D7B2451D70900DB7BBA /* LaunchScreen.storyboard */; };
 		04BB9D882451D70900DB7BBA /* ECarLotteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9D872451D70900DB7BBA /* ECarLotteryTests.swift */; };
 		04BB9D932451D70900DB7BBA /* ECarLotteryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9D922451D70900DB7BBA /* ECarLotteryUITests.swift */; };
+		1B6FF6A394A4407DC5CCF77C /* Pods_ECarLotteryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD244F433E781CE41747FA7 /* Pods_ECarLotteryUITests.framework */; };
+		AA80A45EB2FCDCD730F5D6E8 /* Pods_ECarLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E3F4A329C20690B354A15 /* Pods_ECarLottery.framework */; };
+		C0B96985428602F1540C0701 /* Pods_ECarLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC8A887C02B8C88930CAAA1 /* Pods_ECarLotteryTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +56,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041BC501245A0DE2009BD8A4 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		041BC504245A147A009BD8A4 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
+		041BC506245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCTBaseCollectionViewLayout.swift; sourceTree = "<group>"; };
+		041BC508245A8DA3009BD8A4 /* OCTGalleryLayout_v1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCTGalleryLayout_v1.swift; sourceTree = "<group>"; };
+		041BC50A245A8DAB009BD8A4 /* OCTGalleryLayout_v2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCTGalleryLayout_v2.swift; sourceTree = "<group>"; };
+		041BC50C245A8DB1009BD8A4 /* OCTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCTCollectionViewCell.swift; sourceTree = "<group>"; };
+		041BC50E245A8DBB009BD8A4 /* OCTCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCTCollectionViewCell.xib; sourceTree = "<group>"; };
+		041BC51D245C1244009BD8A4 /* ImageZoomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageZoomAnimation.swift; sourceTree = "<group>"; };
+		0470003B2462D6BB00A5215D /* SpecificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationsTableViewCell.swift; sourceTree = "<group>"; };
+		04700042246543D900A5215D /* CartItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemDetailsViewController.swift; sourceTree = "<group>"; };
+		04A9A5DE24557CB20086062D /* RoundUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
+		04A9A5E024557CBE0086062D /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		04A9A5E224557CC60086062D /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		04A9A5E424557CD10086062D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		04A9A5E624557FCA0086062D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		04A9A5EA245580F20086062D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		04A9A5EC2455822F0086062D /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		04A9A5EE2455BC0D0086062D /* VehicleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsViewController.swift; sourceTree = "<group>"; };
 		04BB9D6D2451D70500DB7BBA /* ECarLottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECarLottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BB9D702451D70500DB7BBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04BB9D722451D70500DB7BBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +88,15 @@
 		04BB9D8E2451D70900DB7BBA /* ECarLotteryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECarLotteryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BB9D922451D70900DB7BBA /* ECarLotteryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECarLotteryUITests.swift; sourceTree = "<group>"; };
 		04BB9D942451D70900DB7BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A7E3F4A329C20690B354A15 /* Pods_ECarLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECarLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5378E1DD3E91310429930CEB /* Pods-ECarLottery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECarLottery.release.xcconfig"; path = "Target Support Files/Pods-ECarLottery/Pods-ECarLottery.release.xcconfig"; sourceTree = "<group>"; };
+		71AC77D4260483BA0201EFA9 /* Pods-ECarLotteryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECarLotteryTests.release.xcconfig"; path = "Target Support Files/Pods-ECarLotteryTests/Pods-ECarLotteryTests.release.xcconfig"; sourceTree = "<group>"; };
+		90E14B4D0FCD1CCD89484C51 /* Pods-ECarLotteryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECarLotteryUITests.release.xcconfig"; path = "Target Support Files/Pods-ECarLotteryUITests/Pods-ECarLotteryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A3B283CE715E4FEA28AF9ED0 /* Pods-ECarLotteryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECarLotteryUITests.debug.xcconfig"; path = "Target Support Files/Pods-ECarLotteryUITests/Pods-ECarLotteryUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CDBFBD068B0AF76FAA5B7A60 /* Pods-ECarLotteryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECarLotteryTests.debug.xcconfig"; path = "Target Support Files/Pods-ECarLotteryTests/Pods-ECarLotteryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DBD244F433E781CE41747FA7 /* Pods_ECarLotteryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECarLotteryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC8A887C02B8C88930CAAA1 /* Pods_ECarLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECarLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F53DC3EE89ED8E6F368556CC /* Pods-ECarLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECarLottery.debug.xcconfig"; path = "Target Support Files/Pods-ECarLottery/Pods-ECarLottery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA80A45EB2FCDCD730F5D6E8 /* Pods_ECarLottery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0B96985428602F1540C0701 /* Pods_ECarLotteryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +120,62 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B6FF6A394A4407DC5CCF77C /* Pods_ECarLotteryUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041BC503245A1461009BD8A4 /* CartAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				041BC50E245A8DBB009BD8A4 /* OCTCollectionViewCell.xib */,
+				041BC50C245A8DB1009BD8A4 /* OCTCollectionViewCell.swift */,
+				041BC50A245A8DAB009BD8A4 /* OCTGalleryLayout_v2.swift */,
+				041BC508245A8DA3009BD8A4 /* OCTGalleryLayout_v1.swift */,
+				041BC506245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift */,
+				041BC504245A147A009BD8A4 /* CartCollectionViewCell.swift */,
+			);
+			path = CartAnimation;
+			sourceTree = "<group>";
+		};
+		041BC51C245C123A009BD8A4 /* ARNZoomImageTransition */ = {
+			isa = PBXGroup;
+			children = (
+				041BC51D245C1244009BD8A4 /* ImageZoomAnimation.swift */,
+			);
+			path = ARNZoomImageTransition;
+			sourceTree = "<group>";
+		};
+		04700044246553C500A5215D /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				041BC501245A0DE2009BD8A4 /* CartViewController.swift */,
+				04700042246543D900A5215D /* CartItemDetailsViewController.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		04A9A5E8245580BF0086062D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				04A9A5E9245580CB0086062D /* ViewCell */,
+				04A9A5E624557FCA0086062D /* HomeViewController.swift */,
+				04A9A5EE2455BC0D0086062D /* VehicleDetailsViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04A9A5E9245580CB0086062D /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				04A9A5EA245580F20086062D /* HomeTableViewCell.swift */,
+				0470003B2462D6BB00A5215D /* SpecificationsTableViewCell.swift */,
+			);
+			path = ViewCell;
+			sourceTree = "<group>";
+		};
 		04BB9D642451D70500DB7BBA = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +183,8 @@
 				04BB9D862451D70900DB7BBA /* ECarLotteryTests */,
 				04BB9D912451D70900DB7BBA /* ECarLotteryUITests */,
 				04BB9D6E2451D70500DB7BBA /* Products */,
+				1428B7577582E6DDA3BBAF85 /* Pods */,
+				BDFFF519440611424E0B6327 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +201,15 @@
 		04BB9D6F2451D70500DB7BBA /* ECarLottery */ = {
 			isa = PBXGroup;
 			children = (
+				041BC51C245C123A009BD8A4 /* ARNZoomImageTransition */,
+				04BB9DA02451D74000DB7BBA /* Views */,
+				04BB9DA42451D7D500DB7BBA /* Extensions */,
+				04BB9DA12451D78B00DB7BBA /* Helpers */,
+				04BB9DA22451D79F00DB7BBA /* Controllers */,
+				04BB9DA32451D7C300DB7BBA /* SupportFiles */,
 				04BB9D702451D70500DB7BBA /* AppDelegate.swift */,
 				04BB9D722451D70500DB7BBA /* SceneDelegate.swift */,
-				04BB9D742451D70500DB7BBA /* ViewController.swift */,
-				04BB9D762451D70500DB7BBA /* Main.storyboard */,
 				04BB9D792451D70900DB7BBA /* Assets.xcassets */,
-				04BB9D7B2451D70900DB7BBA /* LaunchScreen.storyboard */,
 				04BB9D7E2451D70900DB7BBA /* Info.plist */,
 			);
 			path = ECarLottery;
@@ -128,6 +233,75 @@
 			path = ECarLotteryUITests;
 			sourceTree = "<group>";
 		};
+		04BB9DA02451D74000DB7BBA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04BB9D762451D70500DB7BBA /* Main.storyboard */,
+				04BB9D7B2451D70900DB7BBA /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04BB9DA12451D78B00DB7BBA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		04BB9DA22451D79F00DB7BBA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04700044246553C500A5215D /* Cart */,
+				041BC503245A1461009BD8A4 /* CartAnimation */,
+				04A9A5E8245580BF0086062D /* Home */,
+				04BB9D742451D70500DB7BBA /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04BB9DA32451D7C300DB7BBA /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				04A9A5E424557CD10086062D /* GradientView.swift */,
+				04A9A5E224557CC60086062D /* RoundButton.swift */,
+				04A9A5E024557CBE0086062D /* RoundImageView.swift */,
+				04A9A5DE24557CB20086062D /* RoundUIView.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		04BB9DA42451D7D500DB7BBA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04A9A5EC2455822F0086062D /* UIButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1428B7577582E6DDA3BBAF85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F53DC3EE89ED8E6F368556CC /* Pods-ECarLottery.debug.xcconfig */,
+				5378E1DD3E91310429930CEB /* Pods-ECarLottery.release.xcconfig */,
+				CDBFBD068B0AF76FAA5B7A60 /* Pods-ECarLotteryTests.debug.xcconfig */,
+				71AC77D4260483BA0201EFA9 /* Pods-ECarLotteryTests.release.xcconfig */,
+				A3B283CE715E4FEA28AF9ED0 /* Pods-ECarLotteryUITests.debug.xcconfig */,
+				90E14B4D0FCD1CCD89484C51 /* Pods-ECarLotteryUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BDFFF519440611424E0B6327 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A7E3F4A329C20690B354A15 /* Pods_ECarLottery.framework */,
+				EDC8A887C02B8C88930CAAA1 /* Pods_ECarLotteryTests.framework */,
+				DBD244F433E781CE41747FA7 /* Pods_ECarLotteryUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +309,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04BB9D972451D70900DB7BBA /* Build configuration list for PBXNativeTarget "ECarLottery" */;
 			buildPhases = (
+				689A74B12998E5F422A1F6A9 /* [CP] Check Pods Manifest.lock */,
 				04BB9D692451D70500DB7BBA /* Sources */,
 				04BB9D6A2451D70500DB7BBA /* Frameworks */,
 				04BB9D6B2451D70500DB7BBA /* Resources */,
+				3403E5752D1265E6AC3F5F6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +328,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04BB9D9A2451D70900DB7BBA /* Build configuration list for PBXNativeTarget "ECarLotteryTests" */;
 			buildPhases = (
+				593AC1B01F89BD05EC401DE9 /* [CP] Check Pods Manifest.lock */,
 				04BB9D7F2451D70900DB7BBA /* Sources */,
 				04BB9D802451D70900DB7BBA /* Frameworks */,
 				04BB9D812451D70900DB7BBA /* Resources */,
@@ -170,6 +347,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04BB9D9D2451D70900DB7BBA /* Build configuration list for PBXNativeTarget "ECarLotteryUITests" */;
 			buildPhases = (
+				05947000FA30B9D8D5D0E911 /* [CP] Check Pods Manifest.lock */,
 				04BB9D8A2451D70900DB7BBA /* Sources */,
 				04BB9D8B2451D70900DB7BBA /* Frameworks */,
 				04BB9D8C2451D70900DB7BBA /* Resources */,
@@ -235,6 +413,7 @@
 				04BB9D7D2451D70900DB7BBA /* LaunchScreen.storyboard in Resources */,
 				04BB9D7A2451D70900DB7BBA /* Assets.xcassets in Resources */,
 				04BB9D782451D70500DB7BBA /* Main.storyboard in Resources */,
+				041BC50F245A8DBB009BD8A4 /* OCTCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +433,117 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05947000FA30B9D8D5D0E911 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ECarLotteryUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3403E5752D1265E6AC3F5F6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ECarLottery/Pods-ECarLottery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ECarLottery/Pods-ECarLottery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ECarLottery/Pods-ECarLottery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		593AC1B01F89BD05EC401DE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ECarLotteryTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		689A74B12998E5F422A1F6A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ECarLottery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04BB9D692451D70500DB7BBA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A9A5E324557CC60086062D /* RoundButton.swift in Sources */,
+				04A9A5E124557CBE0086062D /* RoundImageView.swift in Sources */,
+				041BC507245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift in Sources */,
+				041BC50D245A8DB1009BD8A4 /* OCTCollectionViewCell.swift in Sources */,
+				04700043246543DA00A5215D /* CartItemDetailsViewController.swift in Sources */,
 				04BB9D752451D70500DB7BBA /* ViewController.swift in Sources */,
+				04A9A5EF2455BC0D0086062D /* VehicleDetailsViewController.swift in Sources */,
+				041BC502245A0DE2009BD8A4 /* CartViewController.swift in Sources */,
+				04A9A5E724557FCA0086062D /* HomeViewController.swift in Sources */,
+				041BC505245A147A009BD8A4 /* CartCollectionViewCell.swift in Sources */,
+				04A9A5DF24557CB20086062D /* RoundUIView.swift in Sources */,
+				04A9A5ED2455822F0086062D /* UIButton.swift in Sources */,
+				04A9A5E524557CD10086062D /* GradientView.swift in Sources */,
+				04A9A5EB245580F20086062D /* HomeTableViewCell.swift in Sources */,
+				041BC51E245C1244009BD8A4 /* ImageZoomAnimation.swift in Sources */,
 				04BB9D712451D70500DB7BBA /* AppDelegate.swift in Sources */,
 				04BB9D732451D70500DB7BBA /* SceneDelegate.swift in Sources */,
+				041BC509245A8DA3009BD8A4 /* OCTGalleryLayout_v1.swift in Sources */,
+				0470003C2462D6BB00A5215D /* SpecificationsTableViewCell.swift in Sources */,
+				041BC50B245A8DAB009BD8A4 /* OCTGalleryLayout_v2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +714,7 @@
 		};
 		04BB9D982451D70900DB7BBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F53DC3EE89ED8E6F368556CC /* Pods-ECarLottery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,12 +726,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ecarlottery.ecarlottery.ECarLottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		04BB9D992451D70900DB7BBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5378E1DD3E91310429930CEB /* Pods-ECarLottery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -460,12 +744,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ecarlottery.ecarlottery.ECarLottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		04BB9D9B2451D70900DB7BBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDBFBD068B0AF76FAA5B7A60 /* Pods-ECarLotteryTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +772,7 @@
 		};
 		04BB9D9C2451D70900DB7BBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71AC77D4260483BA0201EFA9 /* Pods-ECarLotteryTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +794,7 @@
 		};
 		04BB9D9E2451D70900DB7BBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3B283CE715E4FEA28AF9ED0 /* Pods-ECarLotteryUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +814,7 @@
 		};
 		04BB9D9F2451D70900DB7BBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90E14B4D0FCD1CCD89484C51 /* Pods-ECarLotteryUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

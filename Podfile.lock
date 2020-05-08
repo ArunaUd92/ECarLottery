@@ -1,20 +1,24 @@
 PODS:
   - ARNTransitionAnimator (3.2.0)
   - IQKeyboardManagerSwift (6.5.5)
+  - SkyFloatingLabelTextField (3.8.0)
 
 DEPENDENCIES:
   - ARNTransitionAnimator
   - IQKeyboardManagerSwift
+  - SkyFloatingLabelTextField
 
 SPEC REPOS:
   trunk:
     - ARNTransitionAnimator
     - IQKeyboardManagerSwift
+    - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
   ARNTransitionAnimator: 6fea1fe318b251abfd3cbd06d91215deb374ae40
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
 
-PODFILE CHECKSUM: 98f7e7ca4a9f9844223f84196598cdf7e4cdbc1e
+PODFILE CHECKSUM: 8c690a54aec47609b52eee2c4a86eabd32909018
 
 COCOAPODS: 1.9.0.beta.3

@@ -343,24 +343,36 @@
                                     <constraint firstItem="LNl-DL-Btx" firstAttribute="centerY" secondItem="i9T-MP-4eo" secondAttribute="centerY" id="nFw-hm-R37"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="44C-d4-yus">
-                                <rect key="frame" x="0.0" y="104" width="414" height="698"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewLayout key="collectionViewLayout" id="XcF-2j-qDd" customClass="OCTGalleryLayout_v1" customModule="ECarLottery" customModuleProvider="target"/>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="wSc-mF-mLf" id="PtK-qX-Tuc"/>
-                                    <outlet property="delegate" destination="wSc-mF-mLf" id="rhj-sP-76R"/>
-                                </connections>
-                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Qc-5z-JAS">
+                                <rect key="frame" x="0.0" y="104" width="414" height="718"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="44C-d4-yus">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <collectionViewLayout key="collectionViewLayout" id="XcF-2j-qDd" customClass="OCTGalleryLayout_v1" customModule="ECarLottery" customModuleProvider="target"/>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="wSc-mF-mLf" id="PtK-qX-Tuc"/>
+                                            <outlet property="delegate" destination="wSc-mF-mLf" id="rhj-sP-76R"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="44C-d4-yus" secondAttribute="bottom" id="bO9-RF-5f2"/>
+                                    <constraint firstItem="44C-d4-yus" firstAttribute="top" secondItem="2Qc-5z-JAS" secondAttribute="top" id="ssL-UJ-hOC"/>
+                                    <constraint firstAttribute="trailing" secondItem="44C-d4-yus" secondAttribute="trailing" id="u4M-8w-l4x"/>
+                                    <constraint firstItem="44C-d4-yus" firstAttribute="leading" secondItem="2Qc-5z-JAS" secondAttribute="leading" id="zON-BF-yGj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="44C-d4-yus" firstAttribute="leading" secondItem="eYc-LC-Z8Y" secondAttribute="leading" id="Bcd-5d-iyG"/>
-                            <constraint firstItem="44C-d4-yus" firstAttribute="top" secondItem="i9T-MP-4eo" secondAttribute="bottom" id="Ddn-h6-GeR"/>
+                            <constraint firstItem="2Qc-5z-JAS" firstAttribute="top" secondItem="i9T-MP-4eo" secondAttribute="bottom" id="33f-Rd-gdQ"/>
                             <constraint firstItem="i9T-MP-4eo" firstAttribute="top" secondItem="eYc-LC-Z8Y" secondAttribute="top" id="FFm-2Z-3Hb"/>
-                            <constraint firstItem="eYc-LC-Z8Y" firstAttribute="bottom" secondItem="44C-d4-yus" secondAttribute="bottom" constant="60" id="Fnz-zB-gKK"/>
-                            <constraint firstItem="44C-d4-yus" firstAttribute="trailing" secondItem="eYc-LC-Z8Y" secondAttribute="trailing" id="eZ6-WN-4U3"/>
+                            <constraint firstItem="2Qc-5z-JAS" firstAttribute="leading" secondItem="eYc-LC-Z8Y" secondAttribute="leading" id="Hce-BM-rFe"/>
+                            <constraint firstItem="eYc-LC-Z8Y" firstAttribute="bottom" secondItem="2Qc-5z-JAS" secondAttribute="bottom" constant="40" id="aQe-2b-6PQ"/>
+                            <constraint firstItem="2Qc-5z-JAS" firstAttribute="trailing" secondItem="eYc-LC-Z8Y" secondAttribute="trailing" id="mcI-Lm-Jzh"/>
                             <constraint firstItem="i9T-MP-4eo" firstAttribute="leading" secondItem="xXb-U3-Vro" secondAttribute="leading" id="pcz-JA-weM"/>
                             <constraint firstItem="eYc-LC-Z8Y" firstAttribute="trailing" secondItem="i9T-MP-4eo" secondAttribute="trailing" id="y11-tr-BMz"/>
                         </constraints>
@@ -372,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f6-eg-1Ie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="114"/>
+            <point key="canvasLocation" x="1689.8550724637682" y="113.83928571428571"/>
         </scene>
         <!--Vehicle Details View Controller-->
         <scene sceneID="aAq-nU-8zV">

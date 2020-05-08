@@ -12,6 +12,7 @@ inhibit_all_warnings!
 
   pod 'IQKeyboardManagerSwift'
   pod 'ARNTransitionAnimator'
+  pod 'SkyFloatingLabelTextField'
   
   
   target 'ECarLotteryTests' do

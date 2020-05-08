@@ -17,6 +17,10 @@
 		041BC51E245C1244009BD8A4 /* ImageZoomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC51D245C1244009BD8A4 /* ImageZoomAnimation.swift */; };
 		0470003C2462D6BB00A5215D /* SpecificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470003B2462D6BB00A5215D /* SpecificationsTableViewCell.swift */; };
 		04700043246543DA00A5215D /* CartItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04700042246543D900A5215D /* CartItemDetailsViewController.swift */; };
+		0478AC0C2465743300749C6D /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0478AC0B2465743300749C6D /* Register.storyboard */; };
+		0478AC0F24657A7100749C6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC0E24657A7100749C6D /* LoginViewController.swift */; };
+		0478AC112465A7E200749C6D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC102465A7E200749C6D /* RegistrationViewController.swift */; };
+		0478AC132465B1C900749C6D /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC122465B1C900749C6D /* ResetPasswordViewController.swift */; };
 		04A9A5DF24557CB20086062D /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5DE24557CB20086062D /* RoundUIView.swift */; };
 		04A9A5E124557CBE0086062D /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5E024557CBE0086062D /* RoundImageView.swift */; };
 		04A9A5E324557CC60086062D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5E224557CC60086062D /* RoundButton.swift */; };
@@ -66,6 +70,10 @@
 		041BC51D245C1244009BD8A4 /* ImageZoomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageZoomAnimation.swift; sourceTree = "<group>"; };
 		0470003B2462D6BB00A5215D /* SpecificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationsTableViewCell.swift; sourceTree = "<group>"; };
 		04700042246543D900A5215D /* CartItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemDetailsViewController.swift; sourceTree = "<group>"; };
+		0478AC0B2465743300749C6D /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		0478AC0E24657A7100749C6D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0478AC102465A7E200749C6D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		0478AC122465B1C900749C6D /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		04A9A5DE24557CB20086062D /* RoundUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		04A9A5E024557CBE0086062D /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		04A9A5E224557CC60086062D /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -157,6 +165,16 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
+		0478AC0D24657A3F00749C6D /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				0478AC0E24657A7100749C6D /* LoginViewController.swift */,
+				0478AC102465A7E200749C6D /* RegistrationViewController.swift */,
+				0478AC122465B1C900749C6D /* ResetPasswordViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		04A9A5E8245580BF0086062D /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +256,7 @@
 			children = (
 				04BB9D762451D70500DB7BBA /* Main.storyboard */,
 				04BB9D7B2451D70900DB7BBA /* LaunchScreen.storyboard */,
+				0478AC0B2465743300749C6D /* Register.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,6 +274,7 @@
 				04700044246553C500A5215D /* Cart */,
 				041BC503245A1461009BD8A4 /* CartAnimation */,
 				04A9A5E8245580BF0086062D /* Home */,
+				0478AC0D24657A3F00749C6D /* Registration */,
 				04BB9D742451D70500DB7BBA /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -414,6 +434,7 @@
 				04BB9D7A2451D70900DB7BBA /* Assets.xcassets in Resources */,
 				04BB9D782451D70500DB7BBA /* Main.storyboard in Resources */,
 				041BC50F245A8DBB009BD8A4 /* OCTCollectionViewCell.xib in Resources */,
+				0478AC0C2465743300749C6D /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0478AC0F24657A7100749C6D /* LoginViewController.swift in Sources */,
 				04A9A5E324557CC60086062D /* RoundButton.swift in Sources */,
 				04A9A5E124557CBE0086062D /* RoundImageView.swift in Sources */,
 				041BC507245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift in Sources */,
@@ -537,8 +559,10 @@
 				04A9A5DF24557CB20086062D /* RoundUIView.swift in Sources */,
 				04A9A5ED2455822F0086062D /* UIButton.swift in Sources */,
 				04A9A5E524557CD10086062D /* GradientView.swift in Sources */,
+				0478AC112465A7E200749C6D /* RegistrationViewController.swift in Sources */,
 				04A9A5EB245580F20086062D /* HomeTableViewCell.swift in Sources */,
 				041BC51E245C1244009BD8A4 /* ImageZoomAnimation.swift in Sources */,
+				0478AC132465B1C900749C6D /* ResetPasswordViewController.swift in Sources */,
 				04BB9D712451D70500DB7BBA /* AppDelegate.swift in Sources */,
 				04BB9D732451D70500DB7BBA /* SceneDelegate.swift in Sources */,
 				041BC509245A8DA3009BD8A4 /* OCTGalleryLayout_v1.swift in Sources */,

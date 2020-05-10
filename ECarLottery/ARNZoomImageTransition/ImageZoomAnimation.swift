@@ -54,7 +54,7 @@ extension ImageZoomAnimationVC {
     @objc func dismissalCompletionAction(didComplete: Bool) {}
 }
 
-class ImageZoomAnimationVC: UIViewController, ImageTransitionZoomable {
+class ImageZoomAnimationVC: ELBaseViewController, ImageTransitionZoomable {
     
     func createTransitionImageView() -> UIImageView { return UIImageView() }
 }

@@ -9,16 +9,35 @@
 import UIKit
 import ARNTransitionAnimator
 
-class HomeViewController: ImageZoomAnimationVC {
-
+class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
+    
+    @IBOutlet weak var btnMenuButton: UIBarButtonItem!
     @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet weak var btnCart: UIButton!
+    @IBOutlet weak var lableNoOfCartItem: UILabel!
     
     weak var selectedImageView : UIImageView?
     var animator : ARNTransitionAnimator?
     var isModeInteractive : Bool = false
+    var selectedIndexpath = IndexPath()
+    
+    var counterItem = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationBarWithTitle(navigationTitle: "Home")
+        
+        lableNoOfCartItem.layer.cornerRadius = lableNoOfCartItem.frame.size.height / 2
+        lableNoOfCartItem.clipsToBounds = true
+        
+//        if let revealController = self.revealViewController() {
+//            revealController.tapGestureRecognizer()
+//            btnMenuButton.target = revealController
+//            btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+//        }
+        
+//        let shoppingCartBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "shopping_cart"), style: .done, target: self, action: #selector(btnShoppingCartAction(_ :)))
+//        self.navigationItem.rightBarButtonItems = [shoppingCartBarButton]
         
         self.extendedLayoutIncludesOpaqueBars = false
         
@@ -66,16 +85,17 @@ class HomeViewController: ImageZoomAnimationVC {
         if isModeInteractive {
             self.showInteractive()
         } else {
-
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let controller = storyboard.instantiateViewController(withIdentifier: "VehicleDetailsViewController") as! VehicleDetailsViewController
-                controller.modalPresentationStyle = .fullScreen
-                let animation = ImageZoomAnimation<ImageZoomAnimationVC>(rootVC: self, modalVC: controller, rootNavigation: self.navigationController)
-                let animator = ARNTransitionAnimator(duration: 0.5, animation: animation)
-                controller.transitioningDelegate = animator
-                self.animator = animator
-                
-                self.present(controller, animated: true, completion: nil)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "VehicleDetailsViewController") as! VehicleDetailsViewController
+            controller.modalPresentationStyle = .fullScreen
+            let animation = ImageZoomAnimation<ImageZoomAnimationVC>(rootVC: self, modalVC: controller, rootNavigation: self.navigationController)
+            let animator = ARNTransitionAnimator(duration: 0.5, animation: animation)
+            controller.transitioningDelegate = animator
+            self.animator = animator
+            controller.addCartActionDelegate = self
+            controller.selectedItemIndexpath = self.selectedIndexpath
+            self.present(controller, animated: true, completion: nil)
         }
     }
     
@@ -90,19 +110,28 @@ class HomeViewController: ImageZoomAnimationVC {
         let gestureHandler = TransitionGestureHandler(targetView: controller.view, direction: .bottom)
         animator.registerInteractiveTransitioning(.dismiss, gestureHandler: gestureHandler)
         
+        controller.addCartActionDelegate = self
+        controller.selectedItemIndexpath = self.selectedIndexpath
         controller.transitioningDelegate = animator
         self.animator = animator
         
         self.present(controller, animated: true, completion: nil)
     }
-
+    
     // MARK: Button event action
-    @IBAction func btnShoppingCartAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let cartVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
-        cartVC.modalPresentationStyle = .overFullScreen
-        self.present(cartVC, animated: false, completion: nil)
-    }
+        @IBAction func btnShoppingCartAction(_ sender: Any) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let cartVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+            cartVC.modalPresentationStyle = .overFullScreen
+            self.present(cartVC, animated: false, completion: nil)
+        }
+    
+//    @objc func btnShoppingCartAction(_ sender: UIBarButtonItem) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let cartVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+//        cartVC.modalPresentationStyle = .overFullScreen
+//        self.present(cartVC, animated: false, completion: nil)
+//    }
     
 }
 
@@ -137,26 +166,90 @@ extension HomeViewController: UITableViewDelegate {
         
         let cell = tableView.cellForRow(at: indexPath) as! HomeTableViewCell
         self.selectedImageView = cell.vehicleImageView1
+        self.selectedIndexpath = indexPath
         
         self.handleTransition()
         
-//        UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-//            // HERE
-//            let cell = self.homeTableView.cellForRow(at: indexPath) as! HomeTableViewCell
-//            cell.vehicleImageView1.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)// Scale your image
-//            cell.mainBackgroundView.transform = CGAffineTransform.identity.scaledBy(x: 1.4, y: 1.4)
-//
-//        }) { (finished) in
-//            UIView.animate(withDuration: 1, animations: {
-//                let cell = self.homeTableView.cellForRow(at: indexPath) as! HomeTableViewCell
-//                cell.vehicleImageView1.transform = CGAffineTransform.identity // undo in 1 seconds
-//                 cell.mainBackgroundView.transform = CGAffineTransform.identity
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let vehicleDetailsVC = storyboard.instantiateViewController(withIdentifier: "VehicleDetailsViewController") as! VehicleDetailsViewController
-//                vehicleDetailsVC.modalPresentationStyle = .overFullScreen
-//                self.present(vehicleDetailsVC, animated: false, completion: nil)
-//            })
-//        }
+        //        UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+        //            // HERE
+        //            let cell = self.homeTableView.cellForRow(at: indexPath) as! HomeTableViewCell
+        //            cell.vehicleImageView1.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)// Scale your image
+        //            cell.mainBackgroundView.transform = CGAffineTransform.identity.scaledBy(x: 1.4, y: 1.4)
+        //
+        //        }) { (finished) in
+        //            UIView.animate(withDuration: 1, animations: {
+        //                let cell = self.homeTableView.cellForRow(at: indexPath) as! HomeTableViewCell
+        //                cell.vehicleImageView1.transform = CGAffineTransform.identity // undo in 1 seconds
+        //                 cell.mainBackgroundView.transform = CGAffineTransform.identity
+        //                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //                let vehicleDetailsVC = storyboard.instantiateViewController(withIdentifier: "VehicleDetailsViewController") as! VehicleDetailsViewController
+        //                vehicleDetailsVC.modalPresentationStyle = .overFullScreen
+        //                self.present(vehicleDetailsVC, animated: false, completion: nil)
+        //            })
+        //        }
         
     }
 }
+
+extension HomeViewController: AddCartActionDelegate {
+    
+    func addToCartItem(indexPath: IndexPath) {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+            
+            let cell = self.homeTableView.cellForRow(at: indexPath) as! HomeTableViewCell
+            
+            let imageViewPosition : CGPoint = cell.vehicleImageView1.convert(cell.vehicleImageView1.bounds.origin, to: self.view)
+            
+            let imgViewTemp = UIImageView(frame: CGRect(x: imageViewPosition.x, y: imageViewPosition.y, width: cell.vehicleImageView1.frame.size.width, height: cell.vehicleImageView1.frame.size.height))
+            
+            imgViewTemp.image = cell.vehicleImageView1.image
+            
+            self.animation(tempView: imgViewTemp)
+        }
+    }
+    
+    func animation(tempView : UIView)  {
+        self.view.addSubview(tempView)
+        UIView.animate(withDuration: 1.0,
+                       animations: {
+                        tempView.animationZoom(scaleX: 1.0, y: 1.0)
+        }, completion: { _ in
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                tempView.animationZoom(scaleX: 0.2, y: 0.2)
+                tempView.animationRoted(angle: CGFloat(Double.pi))
+                
+                tempView.frame.origin.x = self.btnCart.frame.origin.x
+                tempView.frame.origin.y = self.btnCart.frame.origin.y
+                
+            }, completion: { _ in
+                
+                tempView.removeFromSuperview()
+                
+                UIView.animate(withDuration: 1.0, animations: {
+                    
+                    self.counterItem += 1
+                    self.lableNoOfCartItem.text = "\(self.counterItem)"
+                    self.btnCart.animationZoom(scaleX: 1.4, y: 1.4)
+                }, completion: {_ in
+                    self.btnCart.animationZoom(scaleX: 1.0, y: 1.0)
+                })
+                
+            })
+            
+        })
+    }
+}
+
+extension UIView{
+    func animationZoom(scaleX: CGFloat, y: CGFloat) {
+        self.transform = CGAffineTransform(scaleX: scaleX, y: y)
+    }
+    
+    func animationRoted(angle : CGFloat) {
+        self.transform = self.transform.rotated(by: angle)
+    }
+}
+

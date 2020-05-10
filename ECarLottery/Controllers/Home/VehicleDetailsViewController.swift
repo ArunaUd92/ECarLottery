@@ -13,6 +13,9 @@ struct Specifications {
     var description: String = ""
 }
 
+protocol AddCartActionDelegate {
+    func addToCartItem(indexPath: IndexPath)
+}
 class VehicleDetailsViewController: ImageZoomAnimationVC {
     
     @IBOutlet weak var imageView : UIImageView!
@@ -21,6 +24,9 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
     @IBOutlet weak var specificationsDataTableView: UITableView!
     @IBOutlet weak var specificationsTableViewHeight: NSLayoutConstraint!
     
+    var addCartActionDelegate: AddCartActionDelegate!
+    
+    var selectedItemIndexpath = IndexPath()
     var specificationsDataList: [Specifications] = []
     
     deinit {
@@ -63,19 +69,19 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
         imageView.frame = self.imageView!.frame
         return imageView
     }
-    
+
     override func presentationBeforeAction() {
         self.imageView.isHidden = true
     }
-    
+
     override func presentationCompletionAction(didComplete: Bool) {
         self.imageView.isHidden = false
     }
-    
+
     override func dismissalBeforeAction() {
         self.imageView.isHidden = true
     }
-    
+
     override func dismissalCompletionAction(didComplete: Bool) {
         if !didComplete {
             self.imageView.isHidden = false
@@ -96,6 +102,7 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
     }
     
     @IBAction func tapCloseButton() {
+        addCartActionDelegate.addToCartItem(indexPath: self.selectedItemIndexpath)
         self.dismiss(animated: true, completion: nil)
     }
 }

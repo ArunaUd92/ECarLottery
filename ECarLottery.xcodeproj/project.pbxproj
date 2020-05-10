@@ -21,6 +21,11 @@
 		0478AC0F24657A7100749C6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC0E24657A7100749C6D /* LoginViewController.swift */; };
 		0478AC112465A7E200749C6D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC102465A7E200749C6D /* RegistrationViewController.swift */; };
 		0478AC132465B1C900749C6D /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC122465B1C900749C6D /* ResetPasswordViewController.swift */; };
+		0478AC1A2467409C00749C6D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC192467409C00749C6D /* SWRevealViewController.m */; };
+		0478AC1E2467420600749C6D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC1D2467420600749C6D /* MenuViewController.swift */; };
+		0478AC202467428C00749C6D /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC1F2467428C00749C6D /* MenuTableViewCell.swift */; };
+		0478AC23246742C100749C6D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC22246742C100749C6D /* UIColorExtension.swift */; };
+		0478AC262467496400749C6D /* ELBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC252467496400749C6D /* ELBaseViewController.swift */; };
 		04A9A5DF24557CB20086062D /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5DE24557CB20086062D /* RoundUIView.swift */; };
 		04A9A5E124557CBE0086062D /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5E024557CBE0086062D /* RoundImageView.swift */; };
 		04A9A5E324557CC60086062D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5E224557CC60086062D /* RoundButton.swift */; };
@@ -74,6 +79,13 @@
 		0478AC0E24657A7100749C6D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0478AC102465A7E200749C6D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		0478AC122465B1C900749C6D /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		0478AC182467409B00749C6D /* ECarLottery-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ECarLottery-Bridging-Header.h"; sourceTree = "<group>"; };
+		0478AC192467409C00749C6D /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		0478AC1B2467411E00749C6D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		0478AC1D2467420600749C6D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0478AC1F2467428C00749C6D /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		0478AC22246742C100749C6D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		0478AC252467496400749C6D /* ELBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELBaseViewController.swift; sourceTree = "<group>"; };
 		04A9A5DE24557CB20086062D /* RoundUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		04A9A5E024557CBE0086062D /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		04A9A5E224557CC60086062D /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -175,6 +187,31 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		0478AC1C246741DD00749C6D /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0478AC212467429000749C6D /* View */,
+				0478AC1D2467420600749C6D /* MenuViewController.swift */,
+			);
+			path = SlideMenu;
+			sourceTree = "<group>";
+		};
+		0478AC212467429000749C6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0478AC1F2467428C00749C6D /* MenuTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0478AC242467493600749C6D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0478AC252467496400749C6D /* ELBaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		04A9A5E8245580BF0086062D /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,7 +311,9 @@
 				04700044246553C500A5215D /* Cart */,
 				041BC503245A1461009BD8A4 /* CartAnimation */,
 				04A9A5E8245580BF0086062D /* Home */,
+				0478AC1C246741DD00749C6D /* SlideMenu */,
 				0478AC0D24657A3F00749C6D /* Registration */,
+				0478AC242467493600749C6D /* Base */,
 				04BB9D742451D70500DB7BBA /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -287,6 +326,9 @@
 				04A9A5E224557CC60086062D /* RoundButton.swift */,
 				04A9A5E024557CBE0086062D /* RoundImageView.swift */,
 				04A9A5DE24557CB20086062D /* RoundUIView.swift */,
+				0478AC182467409B00749C6D /* ECarLottery-Bridging-Header.h */,
+				0478AC192467409C00749C6D /* SWRevealViewController.m */,
+				0478AC1B2467411E00749C6D /* SWRevealViewController.h */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -294,6 +336,7 @@
 		04BB9DA42451D7D500DB7BBA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0478AC22246742C100749C6D /* UIColorExtension.swift */,
 				04A9A5EC2455822F0086062D /* UIButton.swift */,
 			);
 			path = Extensions;
@@ -394,6 +437,7 @@
 				TargetAttributes = {
 					04BB9D6C2451D70500DB7BBA = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 					04BB9D822451D70900DB7BBA = {
 						CreatedOnToolsVersion = 11.4;
@@ -545,6 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0478AC262467496400749C6D /* ELBaseViewController.swift in Sources */,
 				0478AC0F24657A7100749C6D /* LoginViewController.swift in Sources */,
 				04A9A5E324557CC60086062D /* RoundButton.swift in Sources */,
 				04A9A5E124557CBE0086062D /* RoundImageView.swift in Sources */,
@@ -556,15 +601,19 @@
 				041BC502245A0DE2009BD8A4 /* CartViewController.swift in Sources */,
 				04A9A5E724557FCA0086062D /* HomeViewController.swift in Sources */,
 				041BC505245A147A009BD8A4 /* CartCollectionViewCell.swift in Sources */,
+				0478AC1A2467409C00749C6D /* SWRevealViewController.m in Sources */,
 				04A9A5DF24557CB20086062D /* RoundUIView.swift in Sources */,
 				04A9A5ED2455822F0086062D /* UIButton.swift in Sources */,
+				0478AC23246742C100749C6D /* UIColorExtension.swift in Sources */,
 				04A9A5E524557CD10086062D /* GradientView.swift in Sources */,
 				0478AC112465A7E200749C6D /* RegistrationViewController.swift in Sources */,
+				0478AC1E2467420600749C6D /* MenuViewController.swift in Sources */,
 				04A9A5EB245580F20086062D /* HomeTableViewCell.swift in Sources */,
 				041BC51E245C1244009BD8A4 /* ImageZoomAnimation.swift in Sources */,
 				0478AC132465B1C900749C6D /* ResetPasswordViewController.swift in Sources */,
 				04BB9D712451D70500DB7BBA /* AppDelegate.swift in Sources */,
 				04BB9D732451D70500DB7BBA /* SceneDelegate.swift in Sources */,
+				0478AC202467428C00749C6D /* MenuTableViewCell.swift in Sources */,
 				041BC509245A8DA3009BD8A4 /* OCTGalleryLayout_v1.swift in Sources */,
 				0470003C2462D6BB00A5215D /* SpecificationsTableViewCell.swift in Sources */,
 				041BC50B245A8DAB009BD8A4 /* OCTGalleryLayout_v2.swift in Sources */,
@@ -741,6 +790,7 @@
 			baseConfigurationReference = F53DC3EE89ED8E6F368556CC /* Pods-ECarLottery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ECarLottery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -749,6 +799,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ecarlottery.ecarlottery.ECarLottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ECarLottery/SupportFiles/ECarLottery-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -759,6 +811,7 @@
 			baseConfigurationReference = 5378E1DD3E91310429930CEB /* Pods-ECarLottery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ECarLottery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -767,6 +820,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ecarlottery.ecarlottery.ECarLottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ECarLottery/SupportFiles/ECarLottery-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

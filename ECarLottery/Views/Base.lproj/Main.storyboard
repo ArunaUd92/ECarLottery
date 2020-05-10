@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hzc-Aa-WXZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -944,8 +944,8 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lL5-L5-ecN">
                                                 <rect key="frame" x="15" y="532" width="384" height="406"/>
-                                                <mutableString key="text">The C 63 AMG Coupé Edition is a rear wheel drive coupé motor vehicle with a front mounted engine, from Mercedes-Benz. The Mercedes-Benz C 63 AMG Coupé Edition 507 belongs to the C 204 range of cars from Mercedes-Benz. The 8 cylinder, double overhead camshaft naturally aspirated engine has 4 valves per cylinder and a volume of 6.2 litres. For this model it musters power and torque figures of 450 bhp (507 PS/373 kW) at 6800 rpm and 610 Nm (450 lbft/62.2 kgm) at 5200 rpm respectively. A 7 speed automatic gearbox transfers the power to the wheels. Its claimed weight at the kerb is 1730 kg. Its maximum speed stated is 280 km/h or 174 mph, and carbon dioxide emissions are 285.0 g/km.   wheels. Its claimed weight at the kerb is 1730 kg. Its maximum speed stated is 280 km/h or 174 mph, and carbon dioxide emissions are 285.0 g/km.
-</mutableString>
+                                                <string key="text">The C 63 AMG Coupé Edition is a rear wheel drive coupé motor vehicle with a front mounted engine, from Mercedes-Benz. The Mercedes-Benz C 63 AMG Coupé Edition 507 belongs to the C 204 range of cars from Mercedes-Benz. The 8 cylinder, double overhead camshaft naturally aspirated engine has 4 valves per cylinder and a volume of 6.2 litres. For this model it musters power and torque figures of 450 bhp (507 PS/373 kW) at 6800 rpm and 610 Nm (450 lbft/62.2 kgm) at 5200 rpm respectively. A 7 speed automatic gearbox transfers the power to the wheels. Its claimed weight at the kerb is 1730 kg. Its maximum speed stated is 280 km/h or 174 mph, and carbon dioxide emissions are 285.0 g/km.   wheels. Its claimed weight at the kerb is 1730 kg. Its maximum speed stated is 280 km/h or 174 mph, and carbon dioxide emissions are 285.0 g/km.
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1012,7 +1012,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRO-sZ-8Yu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yo9-Xy-Fy0">
                                         <rect key="frame" x="20" y="8" width="44" height="44"/>
@@ -1051,8 +1051,19 @@
                                     <constraint firstItem="yo9-Xy-Fy0" firstAttribute="centerY" secondItem="IRO-sZ-8Yu" secondAttribute="centerY" id="w0Z-7N-9fW"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDw-ik-546">
+                                <rect key="frame" x="379" y="94" width="20" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="hp3-w2-QEm"/>
+                                    <constraint firstAttribute="width" constant="20" id="tpZ-cB-nXx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c7b-Mc-Yjx">
-                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeTableViewCell" rowHeight="434" id="ehq-Y6-2xd" customClass="HomeTableViewCell" customModule="ECarLottery" customModuleProvider="target">
@@ -1179,23 +1190,167 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="0ez-xX-QBx" firstAttribute="trailing" secondItem="zDw-ik-546" secondAttribute="trailing" constant="15" id="4Y5-gq-IlP"/>
                             <constraint firstItem="c7b-Mc-Yjx" firstAttribute="top" secondItem="IRO-sZ-8Yu" secondAttribute="bottom" id="5Ua-Zh-Bib"/>
                             <constraint firstItem="c7b-Mc-Yjx" firstAttribute="leading" secondItem="0ez-xX-QBx" secondAttribute="leading" id="Fuu-12-MI6"/>
                             <constraint firstItem="IRO-sZ-8Yu" firstAttribute="leading" secondItem="0ez-xX-QBx" secondAttribute="leading" id="PRU-kA-Ulk"/>
-                            <constraint firstItem="c7b-Mc-Yjx" firstAttribute="bottom" secondItem="0ez-xX-QBx" secondAttribute="bottom" id="bB9-wt-R22"/>
                             <constraint firstItem="c7b-Mc-Yjx" firstAttribute="trailing" secondItem="0ez-xX-QBx" secondAttribute="trailing" id="jGd-cG-chx"/>
                             <constraint firstItem="IRO-sZ-8Yu" firstAttribute="trailing" secondItem="0ez-xX-QBx" secondAttribute="trailing" id="tTv-fe-rcX"/>
                             <constraint firstItem="IRO-sZ-8Yu" firstAttribute="top" secondItem="0ez-xX-QBx" secondAttribute="top" id="u1E-Zt-ANl"/>
+                            <constraint firstItem="zDw-ik-546" firstAttribute="top" secondItem="0ez-xX-QBx" secondAttribute="top" constant="6" id="xUc-ft-kH3"/>
+                            <constraint firstItem="c7b-Mc-Yjx" firstAttribute="bottom" secondItem="0ez-xX-QBx" secondAttribute="bottom" id="zKh-x2-WAz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0ez-xX-QBx"/>
                     </view>
+                    <navigationItem key="navigationItem" id="upH-XL-ciJ">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="x9y-Ma-JLd">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="btnCart" destination="dsy-1s-83z" id="vmM-ze-850"/>
+                        <outlet property="btnMenuButton" destination="x9y-Ma-JLd" id="Fzb-6K-eOB"/>
                         <outlet property="homeTableView" destination="c7b-Mc-Yjx" id="guy-ez-rCw"/>
+                        <outlet property="lableNoOfCartItem" destination="zDw-ik-546" id="HcB-At-rW7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cP6-qF-dxt" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="114"/>
+            <point key="canvasLocation" x="1827.5362318840582" y="-1189.2857142857142"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="TVH-ei-hJh">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" id="LJF-Cu-OUc" customClass="MenuViewController" customModule="Property_Hunter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aT3-nV-bCf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TZO-De-nFH">
+                                <rect key="frame" x="0.0" y="152" width="414" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuTableViewCell" rowHeight="62" id="SNk-Kh-uSN" customClass="MenuTableViewCell" customModule="Property_Hunter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SNk-Kh-uSN" id="nPw-8b-hIG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gu3-yY-B6s" customClass="RoundUIView" customModule="Property_Hunter" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="40" height="40"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arJ-RZ-owr">
+                                                            <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="4JY-XM-4nM"/>
+                                                                <constraint firstAttribute="height" constant="20" id="tcT-qr-nMw"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="arJ-RZ-owr" firstAttribute="centerY" secondItem="Gu3-yY-B6s" secondAttribute="centerY" id="3JF-9U-f0g"/>
+                                                        <constraint firstAttribute="width" constant="40" id="57P-3l-O3Y"/>
+                                                        <constraint firstAttribute="height" constant="40" id="91K-sH-igK"/>
+                                                        <constraint firstItem="arJ-RZ-owr" firstAttribute="centerX" secondItem="Gu3-yY-B6s" secondAttribute="centerX" id="Ugq-6e-8l7"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6x-kb-HzM">
+                                                    <rect key="frame" x="75" y="21" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="t6x-kb-HzM" firstAttribute="centerY" secondItem="nPw-8b-hIG" secondAttribute="centerY" id="ImZ-qm-Aww"/>
+                                                <constraint firstItem="t6x-kb-HzM" firstAttribute="leading" secondItem="Gu3-yY-B6s" secondAttribute="trailing" constant="20" id="RUP-i9-eBc"/>
+                                                <constraint firstItem="Gu3-yY-B6s" firstAttribute="centerY" secondItem="nPw-8b-hIG" secondAttribute="centerY" id="cAg-eL-jH7"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t6x-kb-HzM" secondAttribute="trailing" constant="20" id="dLQ-ne-ASL"/>
+                                                <constraint firstItem="Gu3-yY-B6s" firstAttribute="leading" secondItem="nPw-8b-hIG" secondAttribute="leading" constant="15" id="re8-e2-Lg1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageBaseView" destination="Gu3-yY-B6s" id="JXK-pD-GkN"/>
+                                            <outlet property="ivMenuImage" destination="arJ-RZ-owr" id="Wp8-ON-Db2"/>
+                                            <outlet property="lblMenuText" destination="t6x-kb-HzM" id="Xda-cf-Xcl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LJF-Cu-OUc" id="mp9-ea-hna"/>
+                                    <outlet property="delegate" destination="LJF-Cu-OUc" id="3gu-O7-yIA"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGs-pW-sn4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="108"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="ctu-hk-jM0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rGs-pW-sn4" firstAttribute="top" secondItem="iKP-w7-WuX" secondAttribute="top" id="86s-Om-Dfw"/>
+                            <constraint firstItem="rGs-pW-sn4" firstAttribute="leading" secondItem="iKP-w7-WuX" secondAttribute="leading" id="JrT-jy-kSU"/>
+                            <constraint firstItem="TZO-De-nFH" firstAttribute="bottom" secondItem="iKP-w7-WuX" secondAttribute="bottom" id="No2-Nh-vcA"/>
+                            <constraint firstItem="TZO-De-nFH" firstAttribute="trailing" secondItem="iKP-w7-WuX" secondAttribute="trailing" id="cgi-6a-3ls"/>
+                            <constraint firstItem="rGs-pW-sn4" firstAttribute="trailing" secondItem="iKP-w7-WuX" secondAttribute="trailing" id="o34-nb-fDE"/>
+                            <constraint firstItem="TZO-De-nFH" firstAttribute="leading" secondItem="iKP-w7-WuX" secondAttribute="leading" id="wGm-6M-3rZ"/>
+                            <constraint firstItem="TZO-De-nFH" firstAttribute="top" secondItem="rGs-pW-sn4" secondAttribute="bottom" id="zrz-7K-uv6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iKP-w7-WuX"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuTableView" destination="TZO-De-nFH" id="XUI-vX-yYn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xnb-Vy-qzy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="-453.34821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wff-6B-AvK">
+            <objects>
+                <navigationController id="oVp-0Z-a8b" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yrP-jh-MWl" customClass="CustomNavigationBar" customModule="Property_Hunter" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hzc-Aa-WXZ" kind="relationship" relationship="rootViewController" id="T5P-Tl-mJc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qI3-oJ-DDg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="-1189"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="sjd-Q3-W1f">
+            <objects>
+                <viewController storyboardIdentifier="SWRevealViewController" id="0nc-OX-rGB" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bPG-Mz-cfq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rS1-fw-Vqv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hxf-ei-6ou"/>
+                    <connections>
+                        <segue destination="LJF-Cu-OUc" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="bNb-Q4-2ap"/>
+                        <segue destination="oVp-0Z-a8b" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="aEQ-bZ-R8b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6S-eW-kgi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="-1189"/>
         </scene>
     </scenes>
     <resources>

@@ -1,9 +1,9 @@
 //
 //  UIColorExtension.swift
-//  Tchiao
+//  ECarLottery
 //
-//  Created by Aruna Udayanga on 9/2/19.
-//  Copyright © 2019 Aruna Udayanga. All rights reserved.
+//  Created by Aruna Udayanga on 5/19/20.
+//  Copyright © 2020 Aruna Udayanga. All rights reserved.
 //
 
 import Foundation

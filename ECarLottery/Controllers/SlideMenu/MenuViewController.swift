@@ -8,10 +8,10 @@
 
 import UIKit
 
-struct SliderMenu {
-    var name: String = ""
-    var imageName: String = ""
-}
+//struct SliderMenu {
+//    var name: String = ""
+//    var imageName: String = ""
+//}
 
 class MenuViewController: UIViewController {
 
@@ -27,17 +27,15 @@ class MenuViewController: UIViewController {
     
     func setMenuList(){
         
-        self.menuList.append(SliderMenu.init(name: "Language,Country & Currency", imageName: "language_slider"))
         self.menuList.append(SliderMenu.init(name: "Home", imageName: "home_slider"))
-        self.menuList.append(SliderMenu.init(name: "Properties", imageName: "property_slider"))
-        self.menuList.append(SliderMenu.init(name: "Recent", imageName: "about_us_slider"))
-        self.menuList.append(SliderMenu.init(name: "VIP", imageName: "vip_slider"))
-        self.menuList.append(SliderMenu.init(name: "Services", imageName: "service_slider"))
-        self.menuList.append(SliderMenu.init(name: "FAQ", imageName: "faq_slider"))
-        self.menuList.append(SliderMenu.init(name: "Promotion", imageName: "promotion_slider"))
-        self.menuList.append(SliderMenu.init(name: "Media", imageName: "media_slider"))
+        self.menuList.append(SliderMenu.init(name: "Raffle Listings", imageName: "Raffle Listings"))
+        self.menuList.append(SliderMenu.init(name: "Raffle Winners", imageName: "Raffle Winners"))
+        self.menuList.append(SliderMenu.init(name: "Previous Draws", imageName: "Previous Draws"))
+        self.menuList.append(SliderMenu.init(name: "My Account", imageName: "My Account"))
+        self.menuList.append(SliderMenu.init(name: "Terms & Conditions", imageName: "Terms & Conditions"))
+        self.menuList.append(SliderMenu.init(name: "How its Works", imageName: "How its Works"))
         self.menuList.append(SliderMenu.init(name: "About Us", imageName: "about_us_slider"))
-        self.menuList.append(SliderMenu.init(name: "Contact Us", imageName: "contact_us_slider"))
+        self.menuList.append(SliderMenu.init(name: "Sign Out", imageName: "contact_us_slider"))
         
     }
 
@@ -82,7 +80,6 @@ extension MenuViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let revealviewcontroller: SWRevealViewController = self.revealViewController()
         
 //        if indexPath.row == 1 {
 //            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

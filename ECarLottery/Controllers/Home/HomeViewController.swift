@@ -8,6 +8,8 @@
 
 import UIKit
 import ARNTransitionAnimator
+import NVActivityIndicatorView
+import Alamofire
 
 class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
     
@@ -81,6 +83,37 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
         self.selectedImageView?.isHidden = false
     }
     
+    func getECarLotteryList() {
+        
+        if !(NetworkReachabilityManager()?.isReachable)! {
+            self.popupAlert(title: "Network error", message: "NO INTERNET", actionTitles: ["RETRY", "CANCEL"], actions: [{ action1 in
+                self.getECarLotteryList()
+                }, { action2 in
+                    
+                }, nil])
+
+        } else {
+            
+            let homeService = HomeService()
+            
+            self.showProgress()
+            homeService.getECarLotteryList(onSuccess: { (response: [ECarLottery]) -> Void in
+                self.hideProgress()
+                
+                
+            }, onResponseError: { (error: String, code: Bool) -> Void in
+                print(error)
+                self.hideProgress()
+                ELMessageView.showMessage(type: ELMessageView.ErrorMessage, title: "Error", message: error)
+                
+            }, onError: { (error: String, code: Int) -> Void in
+                print(error)
+                self.hideProgress()
+                ELMessageView.showMessage(type: ELMessageView.ErrorMessage, title: "Error", message: error)
+            })
+        }
+    }
+    
     func handleTransition() {
         if isModeInteractive {
             self.showInteractive()
@@ -119,12 +152,19 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
     }
     
     // MARK: Button event action
-        @IBAction func btnShoppingCartAction(_ sender: Any) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let cartVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
-            cartVC.modalPresentationStyle = .overFullScreen
-            self.present(cartVC, animated: false, completion: nil)
-        }
+    @IBAction func btnShoppingCartAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let cartVC = storyboard.instantiateViewController(withIdentifier: "YourCartViewController") as! YourCartViewController
+        cartVC.modalPresentationStyle = .overFullScreen
+        self.present(cartVC, animated: false, completion: nil)
+    }
+    
+    @IBAction func btnSlideMenuAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let askCommunityVC = storyboard.instantiateViewController(withIdentifier: "LeftSlideMenuViewController") as! LeftSlideMenuViewController
+        askCommunityVC.modalPresentationStyle = .overFullScreen
+        self.present(askCommunityVC, animated: false, completion: nil)
+    }
     
 //    @objc func btnShoppingCartAction(_ sender: UIBarButtonItem) {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)

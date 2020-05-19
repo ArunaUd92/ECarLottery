@@ -13,6 +13,11 @@ inhibit_all_warnings!
   pod 'IQKeyboardManagerSwift'
   pod 'ARNTransitionAnimator'
   pod 'SkyFloatingLabelTextField'
+  pod 'Alamofire', '~> 4.9'
+  pod 'AlamofireObjectMapper'
+  pod 'SwiftMessages'
+  pod 'NVActivityIndicatorView'
+  pod 'Kingfisher'
   
   
   target 'ECarLotteryTests' do

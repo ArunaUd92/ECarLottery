@@ -15,6 +15,20 @@
 		041BC50D245A8DB1009BD8A4 /* OCTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC50C245A8DB1009BD8A4 /* OCTCollectionViewCell.swift */; };
 		041BC50F245A8DBB009BD8A4 /* OCTCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC50E245A8DBB009BD8A4 /* OCTCollectionViewCell.xib */; };
 		041BC51E245C1244009BD8A4 /* ImageZoomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC51D245C1244009BD8A4 /* ImageZoomAnimation.swift */; };
+		0451D4F02473114000B6CBD9 /* ELMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4EF2473114000B6CBD9 /* ELMessageView.swift */; };
+		0451D4F22473137700B6CBD9 /* ValidatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4F12473137700B6CBD9 /* ValidatorHelper.swift */; };
+		0451D4F42473139B00B6CBD9 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4F32473139B00B6CBD9 /* Int.swift */; };
+		0451D4F6247313A000B6CBD9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4F5247313A000B6CBD9 /* String.swift */; };
+		0451D4FA247316E200B6CBD9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4F9247316E200B6CBD9 /* Router.swift */; };
+		0451D4FD24731A3800B6CBD9 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4FC24731A3800B6CBD9 /* BaseService.swift */; };
+		0451D500247390AE00B6CBD9 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4FF247390AE00B6CBD9 /* HomeService.swift */; };
+		0451D5022473935E00B6CBD9 /* ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D5012473935E00B6CBD9 /* ListResponse.swift */; };
+		0451D5042473937500B6CBD9 /* SingleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D5032473937500B6CBD9 /* SingleResponse.swift */; };
+		0451D5062473957500B6CBD9 /* ECarLottery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D5052473957500B6CBD9 /* ECarLottery.swift */; };
+		0451D508247396D700B6CBD9 /* NVActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D507247396D700B6CBD9 /* NVActivityIndicator.swift */; };
+		0451D50A2473976900B6CBD9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D5092473976800B6CBD9 /* UIViewController.swift */; };
+		0451D50C2473988C00B6CBD9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D50B2473988C00B6CBD9 /* Constants.swift */; };
+		0451D50E247398A700B6CBD9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D50D247398A700B6CBD9 /* Config.swift */; };
 		0470003C2462D6BB00A5215D /* SpecificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470003B2462D6BB00A5215D /* SpecificationsTableViewCell.swift */; };
 		04700043246543DA00A5215D /* CartItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04700042246543D900A5215D /* CartItemDetailsViewController.swift */; };
 		0478AC0C2465743300749C6D /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0478AC0B2465743300749C6D /* Register.storyboard */; };
@@ -26,6 +40,10 @@
 		0478AC202467428C00749C6D /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC1F2467428C00749C6D /* MenuTableViewCell.swift */; };
 		0478AC23246742C100749C6D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC22246742C100749C6D /* UIColorExtension.swift */; };
 		0478AC262467496400749C6D /* ELBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478AC252467496400749C6D /* ELBaseViewController.swift */; };
+		048C68F8246C52530063F0E0 /* LeftSlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C68F7246C52530063F0E0 /* LeftSlideMenuViewController.swift */; };
+		048C68FA246C6E3C0063F0E0 /* YourCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C68F9246C6E3B0063F0E0 /* YourCartViewController.swift */; };
+		048C68FE246C6EA30063F0E0 /* YourCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C68FD246C6EA30063F0E0 /* YourCartTableViewCell.swift */; };
+		048C6900246C725D0063F0E0 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C68FF246C725D0063F0E0 /* UIImageView.swift */; };
 		04A9A5DF24557CB20086062D /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5DE24557CB20086062D /* RoundUIView.swift */; };
 		04A9A5E124557CBE0086062D /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5E024557CBE0086062D /* RoundImageView.swift */; };
 		04A9A5E324557CC60086062D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A9A5E224557CC60086062D /* RoundButton.swift */; };
@@ -73,6 +91,20 @@
 		041BC50C245A8DB1009BD8A4 /* OCTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCTCollectionViewCell.swift; sourceTree = "<group>"; };
 		041BC50E245A8DBB009BD8A4 /* OCTCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCTCollectionViewCell.xib; sourceTree = "<group>"; };
 		041BC51D245C1244009BD8A4 /* ImageZoomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageZoomAnimation.swift; sourceTree = "<group>"; };
+		0451D4EF2473114000B6CBD9 /* ELMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELMessageView.swift; sourceTree = "<group>"; };
+		0451D4F12473137700B6CBD9 /* ValidatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorHelper.swift; sourceTree = "<group>"; };
+		0451D4F32473139B00B6CBD9 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		0451D4F5247313A000B6CBD9 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0451D4F9247316E200B6CBD9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		0451D4FC24731A3800B6CBD9 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		0451D4FF247390AE00B6CBD9 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		0451D5012473935E00B6CBD9 /* ListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResponse.swift; sourceTree = "<group>"; };
+		0451D5032473937500B6CBD9 /* SingleResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleResponse.swift; sourceTree = "<group>"; };
+		0451D5052473957500B6CBD9 /* ECarLottery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECarLottery.swift; sourceTree = "<group>"; };
+		0451D507247396D700B6CBD9 /* NVActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicator.swift; sourceTree = "<group>"; };
+		0451D5092473976800B6CBD9 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		0451D50B2473988C00B6CBD9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0451D50D247398A700B6CBD9 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		0470003B2462D6BB00A5215D /* SpecificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationsTableViewCell.swift; sourceTree = "<group>"; };
 		04700042246543D900A5215D /* CartItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemDetailsViewController.swift; sourceTree = "<group>"; };
 		0478AC0B2465743300749C6D /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -86,6 +118,10 @@
 		0478AC1F2467428C00749C6D /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		0478AC22246742C100749C6D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		0478AC252467496400749C6D /* ELBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELBaseViewController.swift; sourceTree = "<group>"; };
+		048C68F7246C52530063F0E0 /* LeftSlideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSlideMenuViewController.swift; sourceTree = "<group>"; };
+		048C68F9246C6E3B0063F0E0 /* YourCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCartViewController.swift; sourceTree = "<group>"; };
+		048C68FD246C6EA30063F0E0 /* YourCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCartTableViewCell.swift; sourceTree = "<group>"; };
+		048C68FF246C725D0063F0E0 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		04A9A5DE24557CB20086062D /* RoundUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		04A9A5E024557CBE0086062D /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		04A9A5E224557CC60086062D /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -168,9 +204,47 @@
 			path = ARNZoomImageTransition;
 			sourceTree = "<group>";
 		};
+		0451D4F7247313B300B6CBD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0451D5032473937500B6CBD9 /* SingleResponse.swift */,
+				0451D5012473935E00B6CBD9 /* ListResponse.swift */,
+				0451D5052473957500B6CBD9 /* ECarLottery.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0451D4F8247316CE00B6CBD9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0451D4F9247316E200B6CBD9 /* Router.swift */,
+				0451D4FB24731A1400B6CBD9 /* Network Services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0451D4FB24731A1400B6CBD9 /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				0451D4FC24731A3800B6CBD9 /* BaseService.swift */,
+				0451D4FE2473907800B6CBD9 /* HomeServices */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
+		0451D4FE2473907800B6CBD9 /* HomeServices */ = {
+			isa = PBXGroup;
+			children = (
+				0451D4FF247390AE00B6CBD9 /* HomeService.swift */,
+			);
+			path = HomeServices;
+			sourceTree = "<group>";
+		};
 		04700044246553C500A5215D /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				048C68FC246C6E7E0063F0E0 /* View */,
+				048C68FB246C6E630063F0E0 /* YourCart */,
 				041BC501245A0DE2009BD8A4 /* CartViewController.swift */,
 				04700042246543D900A5215D /* CartItemDetailsViewController.swift */,
 			);
@@ -192,6 +266,7 @@
 			children = (
 				0478AC212467429000749C6D /* View */,
 				0478AC1D2467420600749C6D /* MenuViewController.swift */,
+				048C68F7246C52530063F0E0 /* LeftSlideMenuViewController.swift */,
 			);
 			path = SlideMenu;
 			sourceTree = "<group>";
@@ -207,9 +282,26 @@
 		0478AC242467493600749C6D /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				0451D507247396D700B6CBD9 /* NVActivityIndicator.swift */,
 				0478AC252467496400749C6D /* ELBaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		048C68FB246C6E630063F0E0 /* YourCart */ = {
+			isa = PBXGroup;
+			children = (
+				048C68F9246C6E3B0063F0E0 /* YourCartViewController.swift */,
+			);
+			path = YourCart;
+			sourceTree = "<group>";
+		};
+		048C68FC246C6E7E0063F0E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				048C68FD246C6EA30063F0E0 /* YourCartTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		04A9A5E8245580BF0086062D /* Home */ = {
@@ -257,6 +349,8 @@
 			isa = PBXGroup;
 			children = (
 				041BC51C245C123A009BD8A4 /* ARNZoomImageTransition */,
+				0451D4F8247316CE00B6CBD9 /* Networking */,
+				0451D4F7247313B300B6CBD9 /* Models */,
 				04BB9DA02451D74000DB7BBA /* Views */,
 				04BB9DA42451D7D500DB7BBA /* Extensions */,
 				04BB9DA12451D78B00DB7BBA /* Helpers */,
@@ -291,9 +385,9 @@
 		04BB9DA02451D74000DB7BBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0478AC0B2465743300749C6D /* Register.storyboard */,
 				04BB9D762451D70500DB7BBA /* Main.storyboard */,
 				04BB9D7B2451D70900DB7BBA /* LaunchScreen.storyboard */,
-				0478AC0B2465743300749C6D /* Register.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +395,10 @@
 		04BB9DA12451D78B00DB7BBA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0451D50D247398A700B6CBD9 /* Config.swift */,
+				0451D50B2473988C00B6CBD9 /* Constants.swift */,
+				0451D4F12473137700B6CBD9 /* ValidatorHelper.swift */,
+				0451D4EF2473114000B6CBD9 /* ELMessageView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -336,8 +434,12 @@
 		04BB9DA42451D7D500DB7BBA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0451D5092473976800B6CBD9 /* UIViewController.swift */,
 				0478AC22246742C100749C6D /* UIColorExtension.swift */,
 				04A9A5EC2455822F0086062D /* UIButton.swift */,
+				048C68FF246C725D0063F0E0 /* UIImageView.swift */,
+				0451D4F32473139B00B6CBD9 /* Int.swift */,
+				0451D4F5247313A000B6CBD9 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -589,30 +691,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0451D5062473957500B6CBD9 /* ECarLottery.swift in Sources */,
 				0478AC262467496400749C6D /* ELBaseViewController.swift in Sources */,
 				0478AC0F24657A7100749C6D /* LoginViewController.swift in Sources */,
+				0451D4F22473137700B6CBD9 /* ValidatorHelper.swift in Sources */,
 				04A9A5E324557CC60086062D /* RoundButton.swift in Sources */,
 				04A9A5E124557CBE0086062D /* RoundImageView.swift in Sources */,
 				041BC507245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift in Sources */,
 				041BC50D245A8DB1009BD8A4 /* OCTCollectionViewCell.swift in Sources */,
 				04700043246543DA00A5215D /* CartItemDetailsViewController.swift in Sources */,
+				0451D4FA247316E200B6CBD9 /* Router.swift in Sources */,
+				0451D500247390AE00B6CBD9 /* HomeService.swift in Sources */,
 				04BB9D752451D70500DB7BBA /* ViewController.swift in Sources */,
+				048C6900246C725D0063F0E0 /* UIImageView.swift in Sources */,
 				04A9A5EF2455BC0D0086062D /* VehicleDetailsViewController.swift in Sources */,
+				0451D50A2473976900B6CBD9 /* UIViewController.swift in Sources */,
+				0451D4FD24731A3800B6CBD9 /* BaseService.swift in Sources */,
 				041BC502245A0DE2009BD8A4 /* CartViewController.swift in Sources */,
+				0451D5042473937500B6CBD9 /* SingleResponse.swift in Sources */,
 				04A9A5E724557FCA0086062D /* HomeViewController.swift in Sources */,
+				0451D5022473935E00B6CBD9 /* ListResponse.swift in Sources */,
 				041BC505245A147A009BD8A4 /* CartCollectionViewCell.swift in Sources */,
+				048C68FE246C6EA30063F0E0 /* YourCartTableViewCell.swift in Sources */,
 				0478AC1A2467409C00749C6D /* SWRevealViewController.m in Sources */,
 				04A9A5DF24557CB20086062D /* RoundUIView.swift in Sources */,
+				0451D4F42473139B00B6CBD9 /* Int.swift in Sources */,
+				0451D4F02473114000B6CBD9 /* ELMessageView.swift in Sources */,
 				04A9A5ED2455822F0086062D /* UIButton.swift in Sources */,
 				0478AC23246742C100749C6D /* UIColorExtension.swift in Sources */,
+				048C68F8246C52530063F0E0 /* LeftSlideMenuViewController.swift in Sources */,
+				048C68FA246C6E3C0063F0E0 /* YourCartViewController.swift in Sources */,
 				04A9A5E524557CD10086062D /* GradientView.swift in Sources */,
 				0478AC112465A7E200749C6D /* RegistrationViewController.swift in Sources */,
 				0478AC1E2467420600749C6D /* MenuViewController.swift in Sources */,
 				04A9A5EB245580F20086062D /* HomeTableViewCell.swift in Sources */,
 				041BC51E245C1244009BD8A4 /* ImageZoomAnimation.swift in Sources */,
+				0451D50C2473988C00B6CBD9 /* Constants.swift in Sources */,
 				0478AC132465B1C900749C6D /* ResetPasswordViewController.swift in Sources */,
 				04BB9D712451D70500DB7BBA /* AppDelegate.swift in Sources */,
+				0451D4F6247313A000B6CBD9 /* String.swift in Sources */,
+				0451D508247396D700B6CBD9 /* NVActivityIndicator.swift in Sources */,
 				04BB9D732451D70500DB7BBA /* SceneDelegate.swift in Sources */,
+				0451D50E247398A700B6CBD9 /* Config.swift in Sources */,
 				0478AC202467428C00749C6D /* MenuTableViewCell.swift in Sources */,
 				041BC509245A8DA3009BD8A4 /* OCTGalleryLayout_v1.swift in Sources */,
 				0470003C2462D6BB00A5215D /* SpecificationsTableViewCell.swift in Sources */,

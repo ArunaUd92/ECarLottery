@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class ELBaseViewController: UIViewController {
 
@@ -20,6 +21,19 @@ class ELBaseViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor.white]
         
         self.navigationItem.title = navigationTitle
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    //MARK: - Progress
+    func showProgress(){
+        NVActivityIndicator.startActivity(self.view, indicatorType: NVActivityIndicatorType.ballSpinFadeLoader)
+    }
+    
+    func hideProgress(){
+        NVActivityIndicator.stopActivity(self.view)
     }
 
 }

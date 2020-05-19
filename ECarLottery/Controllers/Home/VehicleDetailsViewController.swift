@@ -101,9 +101,14 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
         specificationsDataTableView.reloadData()
     }
     
-    @IBAction func tapCloseButton() {
-        addCartActionDelegate.addToCartItem(indexPath: self.selectedItemIndexpath)
+    // MARK: Button event action
+    @IBAction func btnBackAction() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func btnBuyAction(_ sender: Any) {
+         addCartActionDelegate.addToCartItem(indexPath: self.selectedItemIndexpath)
+         self.dismiss(animated: true, completion: nil)
     }
 }
 

@@ -15,6 +15,9 @@
 		041BC50D245A8DB1009BD8A4 /* OCTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC50C245A8DB1009BD8A4 /* OCTCollectionViewCell.swift */; };
 		041BC50F245A8DBB009BD8A4 /* OCTCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041BC50E245A8DBB009BD8A4 /* OCTCollectionViewCell.xib */; };
 		041BC51E245C1244009BD8A4 /* ImageZoomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC51D245C1244009BD8A4 /* ImageZoomAnimation.swift */; };
+		044BCED72474D7EB00567DB0 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BCED62474D7EB00567DB0 /* FilterViewController.swift */; };
+		044FFC062476269100AFD13C /* AnswerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FFC052476269000AFD13C /* AnswerPopUpViewController.swift */; };
+		044FFC0824762C7F00AFD13C /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FFC0724762C7F00AFD13C /* AnswerTableViewCell.swift */; };
 		0451D4F02473114000B6CBD9 /* ELMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4EF2473114000B6CBD9 /* ELMessageView.swift */; };
 		0451D4F22473137700B6CBD9 /* ValidatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4F12473137700B6CBD9 /* ValidatorHelper.swift */; };
 		0451D4F42473139B00B6CBD9 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4F32473139B00B6CBD9 /* Int.swift */; };
@@ -91,6 +94,9 @@
 		041BC50C245A8DB1009BD8A4 /* OCTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCTCollectionViewCell.swift; sourceTree = "<group>"; };
 		041BC50E245A8DBB009BD8A4 /* OCTCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCTCollectionViewCell.xib; sourceTree = "<group>"; };
 		041BC51D245C1244009BD8A4 /* ImageZoomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageZoomAnimation.swift; sourceTree = "<group>"; };
+		044BCED62474D7EB00567DB0 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		044FFC052476269000AFD13C /* AnswerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerPopUpViewController.swift; sourceTree = "<group>"; };
+		044FFC0724762C7F00AFD13C /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		0451D4EF2473114000B6CBD9 /* ELMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELMessageView.swift; sourceTree = "<group>"; };
 		0451D4F12473137700B6CBD9 /* ValidatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorHelper.swift; sourceTree = "<group>"; };
 		0451D4F32473139B00B6CBD9 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
@@ -204,6 +210,14 @@
 			path = ARNZoomImageTransition;
 			sourceTree = "<group>";
 		};
+		044BCED52474D7C400567DB0 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				044BCED62474D7EB00567DB0 /* FilterViewController.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		0451D4F7247313B300B6CBD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +324,7 @@
 				04A9A5E9245580CB0086062D /* ViewCell */,
 				04A9A5E624557FCA0086062D /* HomeViewController.swift */,
 				04A9A5EE2455BC0D0086062D /* VehicleDetailsViewController.swift */,
+				044FFC052476269000AFD13C /* AnswerPopUpViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -319,6 +334,7 @@
 			children = (
 				04A9A5EA245580F20086062D /* HomeTableViewCell.swift */,
 				0470003B2462D6BB00A5215D /* SpecificationsTableViewCell.swift */,
+				044FFC0724762C7F00AFD13C /* AnswerTableViewCell.swift */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -408,6 +424,7 @@
 			children = (
 				04700044246553C500A5215D /* Cart */,
 				041BC503245A1461009BD8A4 /* CartAnimation */,
+				044BCED52474D7C400567DB0 /* Filter */,
 				04A9A5E8245580BF0086062D /* Home */,
 				0478AC1C246741DD00749C6D /* SlideMenu */,
 				0478AC0D24657A3F00749C6D /* Registration */,
@@ -693,6 +710,7 @@
 			files = (
 				0451D5062473957500B6CBD9 /* ECarLottery.swift in Sources */,
 				0478AC262467496400749C6D /* ELBaseViewController.swift in Sources */,
+				044FFC0824762C7F00AFD13C /* AnswerTableViewCell.swift in Sources */,
 				0478AC0F24657A7100749C6D /* LoginViewController.swift in Sources */,
 				0451D4F22473137700B6CBD9 /* ValidatorHelper.swift in Sources */,
 				04A9A5E324557CC60086062D /* RoundButton.swift in Sources */,
@@ -704,6 +722,7 @@
 				0451D500247390AE00B6CBD9 /* HomeService.swift in Sources */,
 				04BB9D752451D70500DB7BBA /* ViewController.swift in Sources */,
 				048C6900246C725D0063F0E0 /* UIImageView.swift in Sources */,
+				044FFC062476269100AFD13C /* AnswerPopUpViewController.swift in Sources */,
 				04A9A5EF2455BC0D0086062D /* VehicleDetailsViewController.swift in Sources */,
 				0451D50A2473976900B6CBD9 /* UIViewController.swift in Sources */,
 				0451D4FD24731A3800B6CBD9 /* BaseService.swift in Sources */,
@@ -712,6 +731,7 @@
 				04A9A5E724557FCA0086062D /* HomeViewController.swift in Sources */,
 				0451D5022473935E00B6CBD9 /* ListResponse.swift in Sources */,
 				041BC505245A147A009BD8A4 /* CartCollectionViewCell.swift in Sources */,
+				044BCED72474D7EB00567DB0 /* FilterViewController.swift in Sources */,
 				048C68FE246C6EA30063F0E0 /* YourCartTableViewCell.swift in Sources */,
 				0478AC1A2467409C00749C6D /* SWRevealViewController.m in Sources */,
 				04A9A5DF24557CB20086062D /* RoundUIView.swift in Sources */,

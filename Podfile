@@ -18,6 +18,7 @@ inhibit_all_warnings!
   pod 'SwiftMessages'
   pod 'NVActivityIndicatorView'
   pod 'Kingfisher'
+  pod 'MultiSlider'
   
   
   target 'ECarLotteryTests' do

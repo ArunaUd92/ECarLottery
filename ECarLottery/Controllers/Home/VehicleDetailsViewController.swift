@@ -110,6 +110,15 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
          addCartActionDelegate.addToCartItem(indexPath: self.selectedItemIndexpath)
          self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func answerPopUpViewAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let answerPopUpViewController = storyboard.instantiateViewController(withIdentifier: "AnswerPopUpViewController") as! AnswerPopUpViewController
+        answerPopUpViewController.modalTransitionStyle = .crossDissolve
+        answerPopUpViewController.modalPresentationStyle = .overFullScreen
+        self.present(answerPopUpViewController, animated: true, completion: nil)
+        
+    }
 }
 
 // MARK: - Table View DataSource

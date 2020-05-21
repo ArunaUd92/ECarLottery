@@ -101,6 +101,7 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
                 self.hideProgress()
                 
                 
+                
             }, onResponseError: { (error: String, code: Bool) -> Void in
                 print(error)
                 self.hideProgress()
@@ -166,6 +167,14 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
         self.present(askCommunityVC, animated: false, completion: nil)
     }
     
+    @IBAction func btnFilterAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let filterViewController = storyboard.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
+        filterViewController.modalTransitionStyle = .crossDissolve
+        filterViewController.modalPresentationStyle = .overFullScreen
+        self.present(filterViewController, animated: true, completion: nil)
+    }
+    
 //    @objc func btnShoppingCartAction(_ sender: UIBarButtonItem) {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let cartVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
@@ -205,7 +214,7 @@ extension HomeViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let cell = tableView.cellForRow(at: indexPath) as! HomeTableViewCell
-        self.selectedImageView = cell.vehicleImageView1
+        self.selectedImageView = cell.vehicleImageView
         self.selectedIndexpath = indexPath
         
         self.handleTransition()
@@ -239,11 +248,11 @@ extension HomeViewController: AddCartActionDelegate {
             
             let cell = self.homeTableView.cellForRow(at: indexPath) as! HomeTableViewCell
             
-            let imageViewPosition : CGPoint = cell.vehicleImageView1.convert(cell.vehicleImageView1.bounds.origin, to: self.view)
+            let imageViewPosition : CGPoint = cell.vehicleImageView.convert(cell.vehicleImageView.bounds.origin, to: self.view)
             
-            let imgViewTemp = UIImageView(frame: CGRect(x: imageViewPosition.x, y: imageViewPosition.y, width: cell.vehicleImageView1.frame.size.width, height: cell.vehicleImageView1.frame.size.height))
+            let imgViewTemp = UIImageView(frame: CGRect(x: imageViewPosition.x, y: imageViewPosition.y, width: cell.vehicleImageView.frame.size.width, height: cell.vehicleImageView.frame.size.height))
             
-            imgViewTemp.image = cell.vehicleImageView1.image
+            imgViewTemp.image = cell.vehicleImageView.image
             
             self.animation(tempView: imgViewTemp)
         }

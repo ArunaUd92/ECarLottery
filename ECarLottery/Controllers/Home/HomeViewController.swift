@@ -10,6 +10,7 @@ import UIKit
 import ARNTransitionAnimator
 import NVActivityIndicatorView
 import Alamofire
+import Kingfisher
 
 class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
     
@@ -24,6 +25,7 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
     var selectedIndexpath = IndexPath()
     
     var counterItem = 0
+    var eCarLotteryList: [ECarLottery] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,7 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("MainViewController viewWillAppear")
+      //  getECarLotteryList()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -100,7 +103,8 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
             homeService.getECarLotteryList(onSuccess: { (response: [ECarLottery]) -> Void in
                 self.hideProgress()
                 
-                
+                self.eCarLotteryList += response
+                self.homeTableView.reloadData()
                 
             }, onResponseError: { (error: String, code: Bool) -> Void in
                 print(error)
@@ -190,6 +194,16 @@ extension HomeViewController: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+//        let eCarLottery = self.eCarLotteryList[indexPath.row]
+//        cell.lblVehicleName.text = eCarLottery.name
+//        cell.lblVehicleYear.text = eCarLottery.features?.year
+//        cell.lblVehiclePrice.text = "$ \(eCarLottery.price ?? "")"
+//        cell.lblVehicleMileage.text = eCarLottery.features?.millage
+//
+//        if let vehicleImageURL = try? eCarLottery.images?.image1!.asURL() {
+//            cell.vehicleImageView.kf.setImage(with: vehicleImageURL)
+//        }
+        
         return cell
     }
     
@@ -202,7 +216,8 @@ extension HomeViewController: UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+       // return self.eCarLotteryList.count
+        return 5
     }
     
 }

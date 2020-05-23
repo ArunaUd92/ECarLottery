@@ -10,7 +10,7 @@ import Alamofire
 
 enum Router: URLRequestConvertible {
     
-    static let baseURLString = "http://propertyhuntergroup.com/mobapp"
+    static let baseURLString = "http://app.ecarlottery.com/api"
     
     case getECarLotteryList
     case getPropertyListNew(String,String,String,String,String,String,String,String,String)
@@ -30,7 +30,7 @@ enum Router: URLRequestConvertible {
         case .getPropertyListNew:
             return "/api-properties"
         case .getECarLotteryList:
-            return "/a"
+            return "/lottory-home"
         case .postInquiry:
             return "/api-inquiry"
             

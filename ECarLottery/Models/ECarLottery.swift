@@ -13,7 +13,7 @@ struct ECarLottery : Mappable {
     var id : Int?
     var name : String?
     var description : String?
-    var price : Int?
+    var price : String?
     var currency : String?
     var type : String?
     var days : Int?
@@ -22,20 +22,20 @@ struct ECarLottery : Mappable {
     var tickets_sold : Int?
     var country : String?
     var sold : Int?
-    var featured : String?
+    var remove : Int?
+    var featured : Int?
     var created_at : String?
     var updated_at : String?
-    var remove : Int?
     var features : Features?
-    var questions : Questions?
+    var questions : [Questions]?
     var images : Images?
-
+    
     init?(map: Map) {
-
+        
     }
-
+    
     mutating func mapping(map: Map) {
-
+        
         id <- map["id"]
         name <- map["name"]
         description <- map["description"]
@@ -48,16 +48,17 @@ struct ECarLottery : Mappable {
         tickets_sold <- map["tickets_sold"]
         country <- map["country"]
         sold <- map["sold"]
+        remove <- map["remove"]
         featured <- map["featured"]
         created_at <- map["created_at"]
         updated_at <- map["updated_at"]
-        remove <- map["remove"]
         features <- map["features"]
         questions <- map["questions"]
         images <- map["images"]
     }
-
+    
 }
+
 
 struct Features : Mappable {
     var id : Int?
@@ -72,13 +73,13 @@ struct Features : Mappable {
     var millage : String?
     var created_at : String?
     var updated_at : String?
-
+    
     init?(map: Map) {
-
+        
     }
-
+    
     mutating func mapping(map: Map) {
-
+        
         id <- map["id"]
         lotteries_id <- map["lotteries_id"]
         make <- map["make"]
@@ -92,7 +93,7 @@ struct Features : Mappable {
         created_at <- map["created_at"]
         updated_at <- map["updated_at"]
     }
-
+    
 }
 
 struct Images : Mappable {
@@ -110,13 +111,13 @@ struct Images : Mappable {
     var image10 : String?
     var created_at : String?
     var updated_at : String?
-
+    
     init?(map: Map) {
-
+        
     }
-
+    
     mutating func mapping(map: Map) {
-
+        
         id <- map["id"]
         lotteries_id <- map["lotteries_id"]
         image1 <- map["image1"]
@@ -132,35 +133,47 @@ struct Images : Mappable {
         created_at <- map["created_at"]
         updated_at <- map["updated_at"]
     }
-
+    
 }
 
 struct Questions : Mappable {
     var id : Int?
     var lotteries_id : Int?
     var question : String?
-    var answer_1 : String?
-    var answer_2 : String?
-    var answer_3 : String?
     var answer_correct : String?
     var created_at : String?
     var updated_at : String?
-
+    var answer : [Answer]?
+    
     init?(map: Map) {
-
+        
     }
-
+    
     mutating func mapping(map: Map) {
-
+        
         id <- map["id"]
         lotteries_id <- map["lotteries_id"]
         question <- map["question"]
-        answer_1 <- map["answer_1"]
-        answer_2 <- map["answer_2"]
-        answer_3 <- map["answer_3"]
         answer_correct <- map["answer_correct"]
         created_at <- map["created_at"]
         updated_at <- map["updated_at"]
+        answer <- map["answer"]
     }
+    
+}
 
+struct Answer : Mappable {
+    var key : Int?
+    var answer : String?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        
+        key <- map["key"]
+        answer <- map["answer"]
+    }
+    
 }

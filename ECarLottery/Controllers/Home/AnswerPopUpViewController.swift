@@ -10,17 +10,29 @@ import UIKit
 
 class AnswerPopUpViewController: UIViewController {
 
-    @IBOutlet weak var answerTableView: UITableView!
+    @IBOutlet weak var answerTableView: SelfSizedTableView!
+    
+    var answerList: [Answer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         answerTableView.tableFooterView = UIView()
-        answerTableView.estimatedRowHeight = 210.0
-        answerTableView.rowHeight = UITableView.automaticDimension
         
+        answerTableView.estimatedRowHeight = 44.0
+        answerTableView.rowHeight = UITableView.automaticDimension
+
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        answerTableView.maxHeight = 375
+        answerTableView.reloadData()
+    }
+    
+    @IBAction func btnCloseTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - Table View DataSource
@@ -29,7 +41,8 @@ extension AnswerPopUpViewController: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerTableViewCell", for: indexPath) as! AnswerTableViewCell
-        cell.lblAnswer.text = "arrLocation[indexPath.row].district"
+        let answerObj = self.answerList[indexPath.row]
+        cell.lblAnswer.text = answerObj.answer
         return cell
     }
     

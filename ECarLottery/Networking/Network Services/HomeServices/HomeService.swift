@@ -16,13 +16,14 @@ class HomeService: BaseService {
         
         Alamofire.request(Router.getECarLotteryList)
             .validate()
-            .responseObject { (response: DataResponse<ListResponse<ECarLottery>>) in
+            .responseObject { (response: DataResponse<ListResponse<LottoryHome>>) in
                 
                 switch response.result {
                 case .success(let value):
                     
                     if (value.result == true) {
-                        onSuccess(value.data!)
+                        let cxcxc = value.data![0].data
+                        onSuccess(cxcxc!)
                         
                     } else {
                         onResponseError(value.message!, value.result!)

@@ -20,7 +20,15 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
     
     @IBOutlet weak var imageView : UIImageView!
     @IBOutlet weak var closeButton : UIButton!
-    
+    @IBOutlet weak var lblCorrectAnswer : UILabel!
+    @IBOutlet weak var lblVehicleDetailsName: UILabel!
+    @IBOutlet weak var lblTicketPrice: UILabel!
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblMaxTicketSoldCount: UILabel!
+    @IBOutlet weak var lblMinTicketSoldCount: UILabel!
+    @IBOutlet weak var lblRemainingTicketCount: UILabel!
+    @IBOutlet weak var txtTicketCount: UITextField!
+    @IBOutlet weak var linearProgressView: LinearProgressView!
     @IBOutlet weak var specificationsDataTableView: UITableView!
     @IBOutlet weak var specificationsTableViewHeight: NSLayoutConstraint!
     
@@ -28,6 +36,10 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
     
     var selectedItemIndexpath = IndexPath()
     var specificationsDataList: [Specifications] = []
+    var eCarLotteryObject: ECarLottery? = nil
+    
+    let ticketCountPicker: UIPickerView = UIPickerView()
+    var ticketCountArray: [String] = []
     
     deinit {
         print("deinit ModalViewController")
@@ -35,7 +47,12 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpData()
         setupSpecificationsData()
+        
+        ticketCountPicker.delegate = self
+        ticketCountPicker.dataSource = self
+        txtTicketCount?.inputView = ticketCountPicker
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,8 +76,14 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
         self.specificationsDataTableView.layoutIfNeeded()
     }
     
-    // MARK: - ImageTransitionZoomable
+    private func setUpData(){
+        for count in 0 ... 24{
+            let number = count + 1
+            ticketCountArray.append(number.toString())
+        }
+    }
     
+    // MARK: - ImageTransitionZoomable
     override func createTransitionImageView() -> UIImageView {
         let imageView = UIImageView(image: self.imageView.image)
         imageView.contentMode = self.imageView.contentMode
@@ -90,13 +113,27 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
     
     func setupSpecificationsData(){
         
-        specificationsDataList.append(Specifications.init(title: "Make / model:", description: "Mercedes Benz C63 6.2 AMG COUPE"))
-        specificationsDataList.append(Specifications.init(title: "Make year:", description: "2013"))
-        specificationsDataList.append(Specifications.init(title: "Millage:", description: "74000"))
-        specificationsDataList.append(Specifications.init(title: "Baths", description: "2"))
-        specificationsDataList.append(Specifications.init(title: "vehicle type:", description: "Sport"))
-        specificationsDataList.append(Specifications.init(title: "ENGINE TYPE:", description: "6.2"))
-        specificationsDataList.append(Specifications.init(title: "Doors:", description: "2"))
+        self.lblDescription.text = eCarLotteryObject?.description
+        self.lblVehicleDetailsName.text = eCarLotteryObject?.name
+        self.lblTicketPrice.text = "£\(eCarLotteryObject?.price ?? "")"
+        
+        self.linearProgressView.maximumValue = Float((eCarLotteryObject?.tickets_count)!)
+        self.linearProgressView.minimumValue = 0.0
+        self.linearProgressView.setProgress(Float((eCarLotteryObject?.tickets_sold)!), animated: true)
+        
+        self.lblRemainingTicketCount.text  = "Only \((eCarLotteryObject?.tickets_count)! - (eCarLotteryObject?.tickets_sold)!) remaining!"
+        
+        self.lblMaxTicketSoldCount.text = eCarLotteryObject?.tickets_count?.toString()
+        self.lblMaxTicketSoldCount.text = eCarLotteryObject?.tickets_count?.toString()
+        
+        // set table data
+        specificationsDataList.append(Specifications.init(title: "MAKE / MODEL:", description: "\(eCarLotteryObject?.features?.make ?? "") \(eCarLotteryObject?.features?.model ?? "")"))
+        specificationsDataList.append(Specifications.init(title: "MAKE YEAR:", description: eCarLotteryObject?.features?.year ?? ""))
+        specificationsDataList.append(Specifications.init(title: "MILLAGE:", description: eCarLotteryObject?.features?.millage ?? ""))
+        specificationsDataList.append(Specifications.init(title: "VEHICLE TYPE:", description: eCarLotteryObject?.features?.type ?? ""))
+        specificationsDataList.append(Specifications.init(title: "ENGINE TYPE:", description: eCarLotteryObject?.features?.engine_type ?? ""))
+        specificationsDataList.append(Specifications.init(title: "TRANSMISSION:", description: eCarLotteryObject?.features?.transmission ?? ""))
+        specificationsDataList.append(Specifications.init(title: "DOORS:", description: eCarLotteryObject?.features?.doors ?? ""))
         
         specificationsDataTableView.reloadData()
     }
@@ -112,12 +149,17 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
     }
     
     @IBAction func answerPopUpViewAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let answerPopUpViewController = storyboard.instantiateViewController(withIdentifier: "AnswerPopUpViewController") as! AnswerPopUpViewController
-        answerPopUpViewController.modalTransitionStyle = .crossDissolve
-        answerPopUpViewController.modalPresentationStyle = .overFullScreen
-        self.present(answerPopUpViewController, animated: true, completion: nil)
         
+        if let answerList = eCarLotteryObject?.questions![0].answer, !answerList.isEmpty {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let answerPopUpViewController = storyboard.instantiateViewController(withIdentifier: "AnswerPopUpViewController") as! AnswerPopUpViewController
+            answerPopUpViewController.answerList = answerList
+            answerPopUpViewController.correctAnswerDelegate = self
+            answerPopUpViewController.modalTransitionStyle = .crossDissolve
+            answerPopUpViewController.modalPresentationStyle = .overFullScreen
+            self.present(answerPopUpViewController, animated: true, completion: nil)
+        }
     }
 }
 
@@ -158,6 +200,46 @@ extension VehicleDetailsViewController: UITableViewDelegate {
         self.viewWillLayoutSubviews()
     }
 }
+
+extension VehicleDetailsViewController: CorrectAnswerDelegate {
+    
+    func setCorrectAnswerAction(answerObject: Answer) {
+        self.lblCorrectAnswer.text = answerObject.answer
+    }
+}
+
+extension VehicleDetailsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    //MARK: - UIPickerView delegate
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if(pickerView == ticketCountPicker) {
+            return ticketCountArray.count
+        } else {
+            return 0
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if(pickerView == ticketCountPicker) {
+            return ticketCountArray[row]
+        } else {
+            return ""
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(pickerView == ticketCountPicker) {
+            let ticketCount: String = ticketCountArray[row] ?? ""
+            txtTicketCount?.text = ticketCount
+        }
+    }
+}
+
 
 
 

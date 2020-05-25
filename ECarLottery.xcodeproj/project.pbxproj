@@ -19,6 +19,7 @@
 		044FFC062476269100AFD13C /* AnswerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FFC052476269000AFD13C /* AnswerPopUpViewController.swift */; };
 		044FFC0824762C7F00AFD13C /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FFC0724762C7F00AFD13C /* AnswerTableViewCell.swift */; };
 		044FFC192478BF7200AFD13C /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FFC182478BF7100AFD13C /* SelfSizedTableView.swift */; };
+		044FFC29247BD77600AFD13C /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FFC28247BD77600AFD13C /* LinearProgressView.swift */; };
 		0451D4F02473114000B6CBD9 /* ELMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4EF2473114000B6CBD9 /* ELMessageView.swift */; };
 		0451D4F22473137700B6CBD9 /* ValidatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4F12473137700B6CBD9 /* ValidatorHelper.swift */; };
 		0451D4F42473139B00B6CBD9 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D4F32473139B00B6CBD9 /* Int.swift */; };
@@ -99,6 +100,7 @@
 		044FFC052476269000AFD13C /* AnswerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerPopUpViewController.swift; sourceTree = "<group>"; };
 		044FFC0724762C7F00AFD13C /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		044FFC182478BF7100AFD13C /* SelfSizedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		044FFC28247BD77600AFD13C /* LinearProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressView.swift; sourceTree = "<group>"; };
 		0451D4EF2473114000B6CBD9 /* ELMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELMessageView.swift; sourceTree = "<group>"; };
 		0451D4F12473137700B6CBD9 /* ValidatorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorHelper.swift; sourceTree = "<group>"; };
 		0451D4F32473139B00B6CBD9 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 		04BB9DA32451D7C300DB7BBA /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				044FFC28247BD77600AFD13C /* LinearProgressView.swift */,
 				044FFC182478BF7100AFD13C /* SelfSizedTableView.swift */,
 				04A9A5E424557CD10086062D /* GradientView.swift */,
 				04A9A5E224557CC60086062D /* RoundButton.swift */,
@@ -717,6 +720,7 @@
 				0478AC0F24657A7100749C6D /* LoginViewController.swift in Sources */,
 				0451D4F22473137700B6CBD9 /* ValidatorHelper.swift in Sources */,
 				04A9A5E324557CC60086062D /* RoundButton.swift in Sources */,
+				044FFC29247BD77600AFD13C /* LinearProgressView.swift in Sources */,
 				04A9A5E124557CBE0086062D /* RoundImageView.swift in Sources */,
 				041BC507245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift in Sources */,
 				041BC50D245A8DB1009BD8A4 /* OCTCollectionViewCell.swift in Sources */,

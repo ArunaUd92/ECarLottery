@@ -177,3 +177,20 @@ struct Answer : Mappable {
     }
     
 }
+
+struct LottoryHome : Mappable {
+    var current_page : Int?
+    var total : Int?
+    var data : [ECarLottery]?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        current_page <- map["current_page"]
+        total <- map["total"]
+        data <- map["data"]
+    }
+}
+

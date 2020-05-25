@@ -52,7 +52,7 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("MainViewController viewWillAppear")
-      //  getECarLotteryList()
+        getECarLotteryList()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -133,6 +133,7 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
             self.animator = animator
             controller.addCartActionDelegate = self
             controller.selectedItemIndexpath = self.selectedIndexpath
+            controller.eCarLotteryObject = self.eCarLotteryList[self.selectedIndexpath.row]
             self.present(controller, animated: true, completion: nil)
         }
     }
@@ -150,6 +151,7 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
         
         controller.addCartActionDelegate = self
         controller.selectedItemIndexpath = self.selectedIndexpath
+        controller.eCarLotteryObject = self.eCarLotteryList[self.selectedIndexpath.row]
         controller.transitioningDelegate = animator
         self.animator = animator
         
@@ -194,15 +196,15 @@ extension HomeViewController: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
-//        let eCarLottery = self.eCarLotteryList[indexPath.row]
-//        cell.lblVehicleName.text = eCarLottery.name
-//        cell.lblVehicleYear.text = eCarLottery.features?.year
-//        cell.lblVehiclePrice.text = "$ \(eCarLottery.price ?? "")"
-//        cell.lblVehicleMileage.text = eCarLottery.features?.millage
-//
-//        if let vehicleImageURL = try? eCarLottery.images?.image1!.asURL() {
-//            cell.vehicleImageView.kf.setImage(with: vehicleImageURL)
-//        }
+        let eCarLottery = self.eCarLotteryList[indexPath.row]
+        cell.lblVehicleName.text = eCarLottery.name
+        cell.lblVehicleYear.text = eCarLottery.features?.year
+        cell.lblVehiclePrice.text = "$ \(eCarLottery.price ?? "")"
+        cell.lblVehicleMileage.text = eCarLottery.features?.millage
+
+        if let vehicleImageURL = try? eCarLottery.images?.image1!.asURL() {
+            cell.vehicleImageView.kf.setImage(with: vehicleImageURL)
+        }
         
         return cell
     }
@@ -216,8 +218,8 @@ extension HomeViewController: UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return self.eCarLotteryList.count
-        return 5
+        return self.eCarLotteryList.count
+      //  return 5
     }
     
 }

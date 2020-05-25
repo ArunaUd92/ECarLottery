@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol CorrectAnswerDelegate {
+    func setCorrectAnswerAction(answerObject: Answer)
+}
+
 class AnswerPopUpViewController: UIViewController {
 
     @IBOutlet weak var answerTableView: SelfSizedTableView!
     
     var answerList: [Answer] = []
+    var correctAnswerDelegate: CorrectAnswerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +60,7 @@ extension AnswerPopUpViewController: UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.answerList.count
     }
     
 }
@@ -64,8 +69,9 @@ extension AnswerPopUpViewController: UITableViewDataSource  {
 extension AnswerPopUpViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-
+        let answerObj = self.answerList[indexPath.row]
+        correctAnswerDelegate.setCorrectAnswerAction(answerObject: answerObj)
+        dismiss(animated: true, completion: nil)
     }
 }
 

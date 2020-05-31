@@ -12,6 +12,8 @@ struct Constants {
     
     static let COUNTRYCODE = "+94"
     
+    static let APPKEY = "5695451dd88713676f0b84a430e648eads"
+    
     struct Security {
         static let access_token_key = "access_token"
         static let refresh_token_key = "refresh_token"
@@ -28,4 +30,6 @@ struct Constants {
         static let ErrorInternalServer = 500
         static let ErrorValidation = 1000
     }
+    
+    
 }

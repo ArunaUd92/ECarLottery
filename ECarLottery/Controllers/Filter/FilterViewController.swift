@@ -14,6 +14,10 @@ struct TypeData {
     var value: String = ""
 }
 
+protocol FilterTypesSelectDelegate {
+    func filterTypesSelect(type: String, priceRange: String)
+}
+
 class FilterViewController: UIViewController {
     
     @IBOutlet weak var priceRangeView: UIView!
@@ -27,6 +31,9 @@ class FilterViewController: UIViewController {
     
     let typePicker: UIPickerView = UIPickerView()
     var typeArray: [TypeData] = []
+    var itemType: String = ""
+    var priceRange: String = ""
+    var filterTypesSelectDelegate: FilterTypesSelectDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +45,8 @@ class FilterViewController: UIViewController {
         typePicker.delegate = self
         typePicker.dataSource = self
         txtType?.inputView = typePicker
+        
+        txtType.text = itemType
     }
     
     func setUpData(){
@@ -58,7 +67,7 @@ class FilterViewController: UIViewController {
         horizontalMultiSlider.trackWidth = 1
         horizontalMultiSlider.showsThumbImageShadow = false
         horizontalMultiSlider.valueLabelPosition = .notAnAttribute
-        horizontalMultiSlider.value = [0, 50]
+       
         priceRangeView.addConstrainedSubview(horizontalMultiSlider, constrain: .leftMargin, .rightMargin, .topMargin)
         
         distanceLabel.font = distanceLabel.font.withSize(11)
@@ -67,18 +76,15 @@ class FilterViewController: UIViewController {
         priceRangeView.addConstrainedSubview(distanceLabel, constrain: .leftMargin, .bottomMargin)
         priceRangeView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 8, right: 20)
         
-        //            if(filterViewModel.age.count > 0){
-        //                guard let floatVal1 = NumberFormatter().number(from: filterViewModel.age[0]) else { return }
-        //                guard let floatVal2 = NumberFormatter().number(from: filterViewModel.age[1]) else { return }
-        //                ageLabel.text = "\(Int(truncating: floatVal1)) to \(Int(truncating: floatVal2)) age"
-        //                horizontalMultiSlider.value = [floatVal1, floatVal2] as! [CGFloat]
-        //            } else {
-        //                horizontalMultiSlider.value = [16, 100]
-        //                ageLabel.text = "16 to 100 age"
-        //            }
+        let priceRangeValues = priceRange.components(separatedBy: "-")
         
-        lblMinPrice.text = "0"
-        lblMaxPrice.text = "50"
+        guard let floatMinVal = NumberFormatter().number(from: priceRangeValues[0]) else { return }
+        guard let floatMaxVal = NumberFormatter().number(from: priceRangeValues[1]) else { return }
+        
+        horizontalMultiSlider.value = [floatMinVal, floatMaxVal] as! [CGFloat]
+        
+        lblMinPrice.text = priceRangeValues[0]
+        lblMaxPrice.text = priceRangeValues[1]
         
     }
     
@@ -116,6 +122,15 @@ class FilterViewController: UIViewController {
     
     @IBAction func btnFilterAction(_ sender: Any) {
         
+        var priceRangeValues = ""
+        if(lblMinPrice.text == "0" && lblMaxPrice.text == "0"){
+            priceRangeValues = ""
+        } else {
+            priceRangeValues = "\(lblMinPrice.text ?? "")-\(lblMaxPrice.text ?? "")"
+        }
+        
+        filterTypesSelectDelegate.filterTypesSelect(type: self.txtType.text!, priceRange: priceRangeValues)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

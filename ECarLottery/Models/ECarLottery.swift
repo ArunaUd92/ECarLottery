@@ -28,7 +28,7 @@ struct ECarLottery : Mappable {
     var updated_at : String?
     var features : Features?
     var questions : [Questions]?
-    var images : Images?
+    var images : [Images]?
     
     init?(map: Map) {
         
@@ -99,41 +99,37 @@ struct Features : Mappable {
 struct Images : Mappable {
     var id : Int?
     var lotteries_id : Int?
-    var image1 : String?
-    var image2 : String?
-    var image3 : String?
-    var image4 : String?
-    var image5 : String?
-    var image6 : String?
-    var image7 : String?
-    var image8 : String?
-    var image9 : String?
-    var image10 : String?
     var created_at : String?
     var updated_at : String?
-    
+    var images : [VehicleImages]?
+
     init?(map: Map) {
-        
+
     }
-    
+
     mutating func mapping(map: Map) {
-        
+
         id <- map["id"]
         lotteries_id <- map["lotteries_id"]
-        image1 <- map["image1"]
-        image2 <- map["image2"]
-        image3 <- map["image3"]
-        image4 <- map["image4"]
-        image5 <- map["image5"]
-        image6 <- map["image6"]
-        image7 <- map["image7"]
-        image8 <- map["image8"]
-        image9 <- map["image9"]
-        image10 <- map["image10"]
         created_at <- map["created_at"]
         updated_at <- map["updated_at"]
+        images <- map["images"]
     }
-    
+
+}
+
+struct VehicleImages : Mappable {
+    var images : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        images <- map["images"]
+    }
+
 }
 
 struct Questions : Mappable {

@@ -126,6 +126,10 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
         self.lblMaxTicketSoldCount.text = eCarLotteryObject?.tickets_count?.toString()
         self.lblMaxTicketSoldCount.text = eCarLotteryObject?.tickets_count?.toString()
         
+        if let vehicleImageURL = try? eCarLotteryObject?.images![0].images![0].images!.asURL() {
+            imageView.kf.setImage(with: vehicleImageURL)
+        }
+        
         // set table data
         specificationsDataList.append(Specifications.init(title: "MAKE / MODEL:", description: "\(eCarLotteryObject?.features?.make ?? "") \(eCarLotteryObject?.features?.model ?? "")"))
         specificationsDataList.append(Specifications.init(title: "MAKE YEAR:", description: eCarLotteryObject?.features?.year ?? ""))

@@ -23,9 +23,14 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
     var animator : ARNTransitionAnimator?
     var isModeInteractive : Bool = false
     var selectedIndexpath = IndexPath()
+    var isLotteryListEmpty = false
     
     var counterItem = 0
     var eCarLotteryList: [ECarLottery] = []
+    var sortBy: String = "new"
+    var priceRange: String = "0-50"
+    var itemType: String = "vehicle"
+    var perPageCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +57,7 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("MainViewController viewWillAppear")
+        self.eCarLotteryList.removeAll()
         getECarLotteryList()
     }
     
@@ -100,11 +106,17 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
             let homeService = HomeService()
             
             self.showProgress()
-            homeService.getECarLotteryList(onSuccess: { (response: [ECarLottery]) -> Void in
+            homeService.getECarLotteryList(priceRange: self.priceRange, itemType: self.itemType, sortBy: self.sortBy, pageCount: self.perPageCount, onSuccess: { (response: [ECarLottery]) -> Void in
                 self.hideProgress()
                 
-                self.eCarLotteryList += response
-                self.homeTableView.reloadData()
+                let lotteryCount = response.count
+                if(lotteryCount == 0){
+                    self.isLotteryListEmpty = true
+                    self.homeTableView.tableFooterView?.isHidden = true
+                } else {
+                    self.eCarLotteryList += response
+                    self.homeTableView.reloadData()
+                }
                 
             }, onResponseError: { (error: String, code: Bool) -> Void in
                 print(error)
@@ -178,6 +190,9 @@ class HomeViewController: ImageZoomAnimationVC, CAAnimationDelegate {
         let filterViewController = storyboard.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
         filterViewController.modalTransitionStyle = .crossDissolve
         filterViewController.modalPresentationStyle = .overFullScreen
+        filterViewController.itemType = self.itemType
+        filterViewController.priceRange = self.priceRange
+        filterViewController.filterTypesSelectDelegate = self
         self.present(filterViewController, animated: true, completion: nil)
     }
     
@@ -202,7 +217,7 @@ extension HomeViewController: UITableViewDataSource  {
         cell.lblVehiclePrice.text = "$ \(eCarLottery.price ?? "")"
         cell.lblVehicleMileage.text = eCarLottery.features?.millage
 
-        if let vehicleImageURL = try? eCarLottery.images?.image1!.asURL() {
+        if let vehicleImageURL = try? eCarLottery.images![0].images![0].images!.asURL() {
             cell.vehicleImageView.kf.setImage(with: vehicleImageURL)
         }
         
@@ -254,6 +269,37 @@ extension HomeViewController: UITableViewDelegate {
         //            })
         //        }
         
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastSectionIndex = tableView.numberOfSections - 1
+        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex {
+            // print("this is the last cell")
+            
+            var spinner = UIActivityIndicatorView()
+            if #available(iOS 13.0, *) {
+                spinner = UIActivityIndicatorView(style: .medium)
+            } else {
+                spinner.style = UIActivityIndicatorView.Style.white
+            }
+            spinner.color = UIColor.init(hexString: "#1B1C45", alpha: 1.0)
+            spinner.startAnimating()
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+            
+            if(self.isLotteryListEmpty == false){
+                self.homeTableView.tableFooterView = spinner
+                self.homeTableView.tableFooterView?.isHidden = false
+                self.perPageCount += 1
+                self.getECarLotteryList()
+            } else {
+                //  let customView = UIView(frame: CGRect(x: 0, y: 0, width: 4, height: 4))
+                // self.tableView.tableFooterView = customView
+                self.homeTableView.tableFooterView?.frame.size.height = 10
+                self.homeTableView.tableFooterView?.isHidden = true
+                self.homeTableView.tableFooterView = nil
+            }
+        }
     }
 }
 
@@ -319,3 +365,13 @@ extension UIView{
     }
 }
 
+extension HomeViewController: FilterTypesSelectDelegate {
+    
+    func filterTypesSelect(type: String, priceRange: String) {
+        self.priceRange = priceRange
+        self.itemType = type
+        self.perPageCount = 0
+        self.eCarLotteryList.removeAll()
+        getECarLotteryList()
+    }
+}

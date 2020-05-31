@@ -12,21 +12,21 @@ import AlamofireObjectMapper
 
 class HomeService: BaseService {
     
-    func getECarLotteryList(onSuccess: @escaping ([ECarLottery]) -> Void, onResponseError: @escaping (String, Bool) -> Void, onError: @escaping (String, Int) -> Void) {
+    func getECarLotteryList(priceRange: String, itemType: String, sortBy: String, pageCount: Int, onSuccess: @escaping ([ECarLottery]) -> Void, onResponseError: @escaping (String, Bool) -> Void, onError: @escaping (String, Int) -> Void) {
         
-        Alamofire.request(Router.getECarLotteryList)
+        Alamofire.request(Router.getECarLotteryList(priceRange,itemType,sortBy,pageCount))
             .validate()
-            .responseObject { (response: DataResponse<ListResponse<LottoryHome>>) in
+            .responseObject { (response: DataResponse<ListResponse<ECarLottery>>) in
                 
                 switch response.result {
                 case .success(let value):
                     
                     if (value.result == true) {
-                        let cxcxc = value.data![0].data
-                        onSuccess(cxcxc!)
+                        let responseDataSet = value.data
+                        onSuccess(responseDataSet!)
                         
                     } else {
-                        onResponseError(value.message!, value.result!)
+                        onResponseError("", value.result!)
                     }
                     
                 case .failure(let error):

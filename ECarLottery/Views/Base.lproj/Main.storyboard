@@ -1126,7 +1126,7 @@
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.92330194063926929" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="pIa-Gg-OyJ" firstAttribute="centerY" secondItem="ETL-rV-2sy" secondAttribute="centerY" id="17T-d2-fhs"/>
                                                         <constraint firstItem="xKd-Ov-eVJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sbx-O5-ft0" secondAttribute="trailing" constant="15" id="36A-si-0Jb"/>
@@ -1154,7 +1154,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="XeQ-dm-QHa" secondAttribute="trailing" constant="25" id="9Qa-LZ-WMC"/>
                                                 <constraint firstItem="XeQ-dm-QHa" firstAttribute="top" secondItem="GrL-1K-iSh" secondAttribute="top" constant="10" id="B4F-3a-eLm"/>

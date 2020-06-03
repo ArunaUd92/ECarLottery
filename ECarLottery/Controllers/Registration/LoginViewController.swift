@@ -8,9 +8,10 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import Alamofire
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: ELBaseViewController {
+    
     @IBOutlet weak var txtEmail: SkyFloatingLabelTextField!
     @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
     
@@ -19,8 +20,50 @@ class LoginViewController: UIViewController {
         
     }
     
+    func postLogin() {
+        
+        guard let email = txtEmail.text, !email.isEmpty else {
+            ELMessageView.showMessage(type: ELMessageView.ErrorMessage, title: "Error", message: "Email field cannot be empty.")
+            return
+        }
+        
+        guard let password = txtPassword.text, !password.isEmpty else {
+            ELMessageView.showMessage(type: ELMessageView.ErrorMessage, title: "Error", message: "Password number field cannot be empty.")
+            return
+        }
+        
+        if !(NetworkReachabilityManager()?.isReachable)! {
+            self.popupAlert(title: "Network error", message: "NO INTERNET", actionTitles: ["RETRY", "CANCEL"], actions: [{ action1 in
+                self.postLogin()
+                }, { action2 in
+                    
+                }, nil])
+            
+        } else {
+            
+            let authService = AuthService()
+            self.showProgress()
+            authService.postLogin(email: self.txtEmail.text!, password: self.txtPassword.text!, onSuccess: { () -> Void in
+                self.hideProgress()
+                
+                
+                
+                
+            }, onResponseError: { (error: String, code: Bool) -> Void in
+                print(error)
+                self.hideProgress()
+                ELMessageView.showMessage(type: ELMessageView.ErrorMessage, title: "Error", message: error)
+                
+            }, onError: { (error: String, code: Int) -> Void in
+                print(error)
+                self.hideProgress()
+                ELMessageView.showMessage(type: ELMessageView.ErrorMessage, title: "Error", message: error)
+            })
+        }
+    }
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
-       
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         homeVC.modalPresentationStyle = .fullScreen
@@ -28,7 +71,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registrationButtonTapped(_ sender: Any) {
-       
+        
         let storyboard = UIStoryboard(name: "Register", bundle: nil)
         let registrationVC = storyboard.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
         registrationVC.modalPresentationStyle = .fullScreen
@@ -36,7 +79,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func resetPasswordButtonTapped(_ sender: Any) {
-       
+        
         let storyboard = UIStoryboard(name: "Register", bundle: nil)
         let resetPasswordVC = storyboard.instantiateViewController(withIdentifier: "ResetPasswordViewController") as! ResetPasswordViewController
         resetPasswordVC.modalPresentationStyle = .fullScreen

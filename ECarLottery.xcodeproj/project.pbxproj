@@ -34,6 +34,9 @@
 		0451D50A2473976900B6CBD9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D5092473976800B6CBD9 /* UIViewController.swift */; };
 		0451D50C2473988C00B6CBD9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D50B2473988C00B6CBD9 /* Constants.swift */; };
 		0451D50E247398A700B6CBD9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D50D247398A700B6CBD9 /* Config.swift */; };
+		0451D8342486D18F00902987 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D8332486D18F00902987 /* AuthService.swift */; };
+		0451D8362486D29800902987 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451D8352486D29700902987 /* User.swift */; };
+		046E54E224837E280045D5D1 /* RaffleListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E54E124837E280045D5D1 /* RaffleListingsViewController.swift */; };
 		0470003C2462D6BB00A5215D /* SpecificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470003B2462D6BB00A5215D /* SpecificationsTableViewCell.swift */; };
 		04700043246543DA00A5215D /* CartItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04700042246543D900A5215D /* CartItemDetailsViewController.swift */; };
 		0478AC0C2465743300749C6D /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0478AC0B2465743300749C6D /* Register.storyboard */; };
@@ -115,6 +118,9 @@
 		0451D5092473976800B6CBD9 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		0451D50B2473988C00B6CBD9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0451D50D247398A700B6CBD9 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		0451D8332486D18F00902987 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		0451D8352486D29700902987 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		046E54E124837E280045D5D1 /* RaffleListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleListingsViewController.swift; sourceTree = "<group>"; };
 		0470003B2462D6BB00A5215D /* SpecificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationsTableViewCell.swift; sourceTree = "<group>"; };
 		04700042246543D900A5215D /* CartItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemDetailsViewController.swift; sourceTree = "<group>"; };
 		0478AC0B2465743300749C6D /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 				0451D5032473937500B6CBD9 /* SingleResponse.swift */,
 				0451D5012473935E00B6CBD9 /* ListResponse.swift */,
 				0451D5052473957500B6CBD9 /* ECarLottery.swift */,
+				0451D8352486D29700902987 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +253,7 @@
 			children = (
 				0451D4FC24731A3800B6CBD9 /* BaseService.swift */,
 				0451D4FE2473907800B6CBD9 /* HomeServices */,
+				0451D8322486D18000902987 /* AuthService */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -256,6 +264,22 @@
 				0451D4FF247390AE00B6CBD9 /* HomeService.swift */,
 			);
 			path = HomeServices;
+			sourceTree = "<group>";
+		};
+		0451D8322486D18000902987 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				0451D8332486D18F00902987 /* AuthService.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		046E54E024837DFE0045D5D1 /* RaffleListings */ = {
+			isa = PBXGroup;
+			children = (
+				046E54E124837E280045D5D1 /* RaffleListingsViewController.swift */,
+			);
+			path = RaffleListings;
 			sourceTree = "<group>";
 		};
 		04700044246553C500A5215D /* Cart */ = {
@@ -426,6 +450,7 @@
 		04BB9DA22451D79F00DB7BBA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				046E54E024837DFE0045D5D1 /* RaffleListings */,
 				04700044246553C500A5215D /* Cart */,
 				041BC503245A1461009BD8A4 /* CartAnimation */,
 				044BCED52474D7C400567DB0 /* Filter */,
@@ -733,17 +758,20 @@
 				044FFC062476269100AFD13C /* AnswerPopUpViewController.swift in Sources */,
 				04A9A5EF2455BC0D0086062D /* VehicleDetailsViewController.swift in Sources */,
 				0451D50A2473976900B6CBD9 /* UIViewController.swift in Sources */,
+				0451D8342486D18F00902987 /* AuthService.swift in Sources */,
 				0451D4FD24731A3800B6CBD9 /* BaseService.swift in Sources */,
 				041BC502245A0DE2009BD8A4 /* CartViewController.swift in Sources */,
 				0451D5042473937500B6CBD9 /* SingleResponse.swift in Sources */,
 				04A9A5E724557FCA0086062D /* HomeViewController.swift in Sources */,
 				0451D5022473935E00B6CBD9 /* ListResponse.swift in Sources */,
 				041BC505245A147A009BD8A4 /* CartCollectionViewCell.swift in Sources */,
+				046E54E224837E280045D5D1 /* RaffleListingsViewController.swift in Sources */,
 				044BCED72474D7EB00567DB0 /* FilterViewController.swift in Sources */,
 				048C68FE246C6EA30063F0E0 /* YourCartTableViewCell.swift in Sources */,
 				0478AC1A2467409C00749C6D /* SWRevealViewController.m in Sources */,
 				04A9A5DF24557CB20086062D /* RoundUIView.swift in Sources */,
 				0451D4F42473139B00B6CBD9 /* Int.swift in Sources */,
+				0451D8362486D29800902987 /* User.swift in Sources */,
 				0451D4F02473114000B6CBD9 /* ELMessageView.swift in Sources */,
 				04A9A5ED2455822F0086062D /* UIButton.swift in Sources */,
 				0478AC23246742C100749C6D /* UIColorExtension.swift in Sources */,

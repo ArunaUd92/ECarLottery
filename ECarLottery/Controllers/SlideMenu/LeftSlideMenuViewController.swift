@@ -34,18 +34,17 @@ class LeftSlideMenuViewController: UIViewController {
         self.backgroundTapView.addGestureRecognizer(backgroundViewTap)
         
         setMenuList()
-        
     }
     
     func setMenuList(){
         
-        
-        self.menuList.append(SliderMenu.init(name: "Change Language", imageName: "ic_language"))
-        self.menuList.append(SliderMenu.init(name: "My Products", imageName: "ic_product"))
-        self.menuList.append(SliderMenu.init(name: "My Locations", imageName: "ic_location"))
-        self.menuList.append(SliderMenu.init(name: "My Purchases", imageName: "ic_user_reg"))
-        self.menuList.append(SliderMenu.init(name: "My Acounts", imageName: "ic_user_reg"))
-        self.menuList.append(SliderMenu.init(name: "About Us", imageName: "ic_info"))
+        self.menuList.append(SliderMenu.init(name: "Home", imageName: "ic_language"))
+        self.menuList.append(SliderMenu.init(name: "Raffle Listings", imageName: "ic_product"))
+        self.menuList.append(SliderMenu.init(name: "Raffle Winners", imageName: "ic_location"))
+        self.menuList.append(SliderMenu.init(name: "Previous Draws", imageName: "ic_user_reg"))
+        self.menuList.append(SliderMenu.init(name: "My Account", imageName: "ic_user_reg"))
+        self.menuList.append(SliderMenu.init(name: "Terms & Conditions", imageName: "ic_info"))
+        self.menuList.append(SliderMenu.init(name: "How its Works", imageName: "ic_signout"))
         self.menuList.append(SliderMenu.init(name: "Sign Out", imageName: "ic_signout"))
         
     }
@@ -117,15 +116,20 @@ extension LeftSlideMenuViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if(indexPath.row == 2){
-//            weak var pvc = self.presentingViewController
-//            self.dismiss(animated: false, completion: {
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let myProductsVC = storyboard.instantiateViewController(withIdentifier: "MyProductsViewController") as! MyProductsViewController
-//                myProductsVC.isSellMyProducts = false
-//                myProductsVC.modalPresentationStyle = .fullScreen
-//                pvc?.present(myProductsVC, animated: true, completion: nil)
-//            })
+        if(indexPath.row == 0){
+            weak var pvc = self.presentingViewController
+            self.dismiss(animated: false, completion: {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                homeVC.modalPresentationStyle =  .fullScreen
+                pvc?.present(homeVC, animated: false, completion: nil)
+            })
+        } else if(indexPath.row == 1){
+            weak var pvc = self.presentingViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let raffleListingsVC = storyboard.instantiateViewController(withIdentifier: "RaffleListingsViewController") as! RaffleListingsViewController
+            raffleListingsVC.modalPresentationStyle =  .fullScreen
+            pvc?.present(raffleListingsVC, animated: false, completion: nil)
         }
     }
 }

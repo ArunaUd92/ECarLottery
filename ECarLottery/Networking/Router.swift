@@ -13,13 +13,14 @@ enum Router: URLRequestConvertible {
     static let baseURLString = "http://app.ecarlottery.com/api"
     
     case getECarLotteryList(String,String,String,Int)
-    case postInquiry(parameters: Parameters)
+    case postLogin(parameters: Parameters)
+
 
     var method: HTTPMethod {
         switch self {
         case .getECarLotteryList:
             return .get
-        case .postInquiry:
+        case .postLogin:
             return .post
         }
     }
@@ -28,8 +29,8 @@ enum Router: URLRequestConvertible {
         switch self {
         case .getECarLotteryList:
             return "/lottory-home"
-        case .postInquiry:
-            return "/api-inquiry"
+        case .postLogin:
+            return "/login"
             
         }
     }
@@ -60,7 +61,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .getECarLotteryList:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: result.parameters)
-        case .postInquiry(let parameters):
+        case .postLogin(let parameters):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
         }
         return urlRequest

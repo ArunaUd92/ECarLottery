@@ -683,7 +683,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lottery Rules &amp; Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJG-cq-Jo1">
                                                                         <rect key="frame" x="8.5" y="12" width="186" height="21"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="textColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -802,15 +802,19 @@
                     <size key="freeformSize" width="414" height="1450"/>
                     <connections>
                         <outlet property="closeButton" destination="umE-GR-Wr7" id="0Qz-Sc-Sil"/>
+                        <outlet property="descriptionSelectionView" destination="Vuq-JH-OZG" id="xK4-4V-Nzx"/>
                         <outlet property="imageView" destination="gSB-Cr-IkE" id="puZ-9J-lur"/>
                         <outlet property="lblCorrectAnswer" destination="NHa-28-yRT" id="WOO-A4-Hkt"/>
                         <outlet property="lblDescription" destination="Pd0-w5-Oyf" id="uEd-6h-3p1"/>
+                        <outlet property="lblDescriptionText" destination="FuF-Rr-f1e" id="wgY-Db-kLC"/>
+                        <outlet property="lblLotteryRulesText" destination="WJG-cq-Jo1" id="GQX-sN-nSV"/>
                         <outlet property="lblMaxTicketSoldCount" destination="Onv-ZD-Sxb" id="Pe0-gP-hRz"/>
                         <outlet property="lblMinTicketSoldCount" destination="avf-n1-aAk" id="nxE-YE-WKk"/>
                         <outlet property="lblRemainingTicketCount" destination="7z2-3t-NwW" id="RjX-vJ-z9c"/>
                         <outlet property="lblTicketPrice" destination="Q3f-A4-1Ug" id="6O8-Zs-VP5"/>
                         <outlet property="lblVehicleDetailsName" destination="zVF-L7-lwI" id="eTc-K8-74H"/>
                         <outlet property="linearProgressView" destination="VWO-h0-lf1" id="zwA-eZ-R0c"/>
+                        <outlet property="lotteryRulesSelectionView" destination="4fn-eL-JaA" id="Kpl-IS-kmN"/>
                         <outlet property="specificationsDataTableView" destination="qVt-Cd-iA5" id="D14-bD-urb"/>
                         <outlet property="specificationsTableViewHeight" destination="NRH-Dy-hvV" id="2Si-Vd-So4"/>
                         <outlet property="txtTicketCount" destination="eEt-oA-it0" id="vka-3o-uiG"/>

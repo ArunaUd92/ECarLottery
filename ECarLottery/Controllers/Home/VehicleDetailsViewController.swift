@@ -32,6 +32,11 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
     @IBOutlet weak var specificationsDataTableView: UITableView!
     @IBOutlet weak var specificationsTableViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var descriptionSelectionView: UIView!
+    @IBOutlet weak var lotteryRulesSelectionView: UIView!
+    @IBOutlet weak var lblDescriptionText: UILabel!
+    @IBOutlet weak var lblLotteryRulesText: UILabel!
+    
     var addCartActionDelegate: AddCartActionDelegate!
     
     var selectedItemIndexpath = IndexPath()
@@ -40,6 +45,7 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
     
     let ticketCountPicker: UIPickerView = UIPickerView()
     var ticketCountArray: [String] = []
+    var selectedBarType: String = "DESCRIPTION"
     
     deinit {
         print("deinit ModalViewController")
@@ -47,12 +53,15 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setViewGestureRecognizer()
         setUpData()
         setupSpecificationsData()
         
         ticketCountPicker.delegate = self
         ticketCountPicker.dataSource = self
         txtTicketCount?.inputView = ticketCountPicker
+        
+        self.topBarSelectionView(isSelectedValue: "DESCRIPTION")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,6 +120,52 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
         }
     }
     
+    private func setViewGestureRecognizer(){
+        
+        let gestureRecognizerDescription = UITapGestureRecognizer(target: self, action: #selector(gestureRecognizerDescriptionViewAction(option:)))
+        descriptionSelectionView.isUserInteractionEnabled = true
+        descriptionSelectionView.addGestureRecognizer(gestureRecognizerDescription)
+        
+        let gestureRecognizLotteryRules = UITapGestureRecognizer(target: self, action: #selector(gestureRecognizerLotteryRulesAction(option:)))
+        lotteryRulesSelectionView.isUserInteractionEnabled = true
+        lotteryRulesSelectionView.addGestureRecognizer(gestureRecognizLotteryRules)
+        
+    }
+    
+    @objc func gestureRecognizerDescriptionViewAction(option: AnyObject) {
+        self.selectedBarType = "DESCRIPTION"
+        self.topBarSelectionView(isSelectedValue: "DESCRIPTION")
+        self.setTabBarDetails()
+    }
+    
+    @objc func gestureRecognizerLotteryRulesAction(option: AnyObject) {
+        self.selectedBarType = "LOTTERYDETAILS"
+        self.topBarSelectionView(isSelectedValue: "LOTTERYDETAILS")
+        self.setTabBarDetails()
+    }
+    
+    private func topBarSelectionView(isSelectedValue: String){
+        
+        switch isSelectedValue {
+        case "DESCRIPTION":
+            
+            self.lblDescriptionText.textColor = UIColor(hexString: "#DC2D14")
+            self.lblLotteryRulesText.textColor =  UIColor(hexString: "#434343")
+            
+            break
+            
+        case "LOTTERYDETAILS":
+
+            self.lblDescriptionText.textColor = UIColor(hexString: "#434343")
+            self.lblLotteryRulesText.textColor = UIColor(hexString: "#DC2D14")
+            
+            break
+            
+        default:
+            print("no match")
+        }
+    }
+    
     func setupSpecificationsData(){
         
         self.lblDescription.text = eCarLotteryObject?.description
@@ -140,6 +195,15 @@ class VehicleDetailsViewController: ImageZoomAnimationVC {
         specificationsDataList.append(Specifications.init(title: "DOORS:", description: eCarLotteryObject?.features?.doors ?? ""))
         
         specificationsDataTableView.reloadData()
+    }
+    
+    private func setTabBarDetails(){
+        
+        if(self.selectedBarType == "DESCRIPTION"){
+            self.lblDescription.text = eCarLotteryObject?.description
+        } else {
+            self.lblDescription.text = "This competition has a maximum number of 2500 entries.\n\nQualifying Question MUST be answered CORRECTLY, for you to be entered into the live draw.\n\nCompetition end date will be announced once 50% of tickets have been sold\n\nAll competition draws are streamed LIVE on our facebook page, and winner's are selected at random using Google's Random Number Generator\n\nThe draw for this competition will be held within 48 hours of the competition ending. The competition will end after the last ticket is sold or if an early finish is announced by us the promoters.\n\nEntering the competition and answering the question correctly does not gaurantee a prize, only your entry into the live draw.\n\nFor all updates, ongoing competitions and current live draws please register here or like our facebook page.\n\nThis competition has a maximum entry of 25 tickets per person.\n\nPlayers must be 16 years or older to be able to enter one of our skilled prize competitions.\n\nBy entering you confirm that you have read and agreed to our terms and conditions"
+        }
     }
     
     // MARK: Button event action

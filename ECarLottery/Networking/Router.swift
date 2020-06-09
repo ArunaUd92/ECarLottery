@@ -14,13 +14,15 @@ enum Router: URLRequestConvertible {
     
     case getECarLotteryList(String,String,String,Int)
     case postLogin(parameters: Parameters)
+    case postRegistration(parameters: Parameters)
+    case postOTPVerification(parameters: Parameters)
 
-
+    
     var method: HTTPMethod {
         switch self {
         case .getECarLotteryList:
             return .get
-        case .postLogin:
+        case .postLogin, .postRegistration, .postOTPVerification:
             return .post
         }
     }
@@ -31,6 +33,10 @@ enum Router: URLRequestConvertible {
             return "/lottory-home"
         case .postLogin:
             return "/login"
+        case .postRegistration:
+            return "/register"
+        case .postOTPVerification:
+            return "/verification"
             
         }
     }
@@ -61,7 +67,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .getECarLotteryList:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: result.parameters)
-        case .postLogin(let parameters):
+        case .postLogin(let parameters), .postOTPVerification(let parameters), .postRegistration(let parameters):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
         }
         return urlRequest

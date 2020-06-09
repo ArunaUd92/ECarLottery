@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04129438248EBAD000C5BEC5 /* OTPVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04129437248EBAD000C5BEC5 /* OTPVerificationViewController.swift */; };
 		041BC502245A0DE2009BD8A4 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC501245A0DE2009BD8A4 /* CartViewController.swift */; };
 		041BC505245A147A009BD8A4 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC504245A147A009BD8A4 /* CartCollectionViewCell.swift */; };
 		041BC507245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC506245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift */; };
@@ -91,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04129437248EBAD000C5BEC5 /* OTPVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationViewController.swift; sourceTree = "<group>"; };
 		041BC501245A0DE2009BD8A4 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		041BC504245A147A009BD8A4 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		041BC506245A8D9B009BD8A4 /* OCTBaseCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCTBaseCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				0478AC0E24657A7100749C6D /* LoginViewController.swift */,
 				0478AC102465A7E200749C6D /* RegistrationViewController.swift */,
 				0478AC122465B1C900749C6D /* ResetPasswordViewController.swift */,
+				04129437248EBAD000C5BEC5 /* OTPVerificationViewController.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				04BB9D752451D70500DB7BBA /* ViewController.swift in Sources */,
 				044FFC192478BF7200AFD13C /* SelfSizedTableView.swift in Sources */,
 				048C6900246C725D0063F0E0 /* UIImageView.swift in Sources */,
+				04129438248EBAD000C5BEC5 /* OTPVerificationViewController.swift in Sources */,
 				044FFC062476269100AFD13C /* AnswerPopUpViewController.swift in Sources */,
 				04A9A5EF2455BC0D0086062D /* VehicleDetailsViewController.swift in Sources */,
 				0451D50A2473976900B6CBD9 /* UIViewController.swift in Sources */,

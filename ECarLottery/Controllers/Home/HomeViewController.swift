@@ -217,7 +217,7 @@ extension HomeViewController: UITableViewDataSource  {
         cell.lblVehiclePrice.text = "$ \(eCarLottery.price ?? "")"
         cell.lblVehicleMileage.text = eCarLottery.features?.millage
 
-        if let vehicleImageURL = try? eCarLottery.images![0].images![0].images!.asURL() {
+        if let vehicleImageURL = try? eCarLottery.images?.images![0].images!.asURL() {
             cell.vehicleImageView.kf.setImage(with: vehicleImageURL)
         }
         

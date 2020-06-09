@@ -28,7 +28,13 @@ class LoginViewController: ELBaseViewController {
         }
         
         guard let password = txtPassword.text, !password.isEmpty else {
-            ELMessageView.showMessage(type: ELMessageView.ErrorMessage, title: "Error", message: "Password number field cannot be empty.")
+            ELMessageView.showMessage(type: ELMessageView.ErrorMessage, title: "Error", message: "Password field cannot be empty.")
+            return
+        }
+        
+        let checkValidEmail = ValidatorHelper.validateEmail(email: txtEmail.text!)
+        if(!checkValidEmail) {
+            ELMessageView.showMessage(type: ELMessageView.ErrorMessage, title: "Error", message: "Invalid Email.")
             return
         }
         

@@ -28,7 +28,7 @@ struct ECarLottery : Mappable {
     var updated_at : String?
     var features : Features?
     var questions : [Questions]?
-    var images : [Images]?
+    var images : Images?
     
     init?(map: Map) {
         
